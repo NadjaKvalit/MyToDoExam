@@ -1,0 +1,113 @@
+
+.bodyFill{
+    background: rgb(224, 224, 224);
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 70px;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.toDoScreen{
+    width: 610px;
+	height: 520px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(255, 255, 255);
+}
+.mainTitle{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo{
+    max-height: 40px; 
+    width: auto; 
+}
+
+h1{
+    font-size: 40px;
+    font-family: Monospace;
+    color: rgb(96, 96, 96);
+}
+
+.addTaskBlock{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 540px;
+    height: 40px;
+    border: 2px solid #2c94c5;
+}
+
+.addTaskInput{
+    width: 500px;
+    height: 40px;
+    border: transparent;
+    padding-left: 4px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font: italic 18px Arial, sans-serif;
+    padding-block:0px;
+}
+
+.addTaskInput:focus {
+    border-color: #2c94c5; /* For example, change the border color to blue */
+    outline: none; /* Remove the default outline when the input is focused */
+    background: #ebfee8;
+}
+
+.add-btn{
+    width: 40px;
+    height: 40px;
+    font: 30px Times New Roman;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-position: center center;
+    box-sizing: border-box;
+    padding: 0px;
+    padding-left: 0px;
+    margin:0px;
+    border: 2px solid #2c94c5;
+    border-left: 4px solid #2c94c5;;
+    background: #40c52c;
+    color: rgb(255, 255, 255);
+}
+
+.taskList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left:0px;
+    padding-left: 0px;
+}
+.taskList li {
+    background: #f0f9ff;
+    padding-left: 10px;
+    /*border-bottom: 1px solid #e9e9e9;*/
+    margin-bottom: 3px;
+    font-family: Monospace;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #2c94c5;;
+    width: 532px;
+    height: 40px;
+    }
+
+.taskList li:hover {
+    box-shadow: 0 4px 8px 0 rgb(231 218 218 / 20%),
+    0 6px 20px 0 rgb(229 214 214 / 19%);
+    background-color: #f6f1f1;
+}
