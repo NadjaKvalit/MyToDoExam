@@ -30,74 +30,33 @@ document.addEventListener("DOMContentLoaded", function () {
       priorityModalContent.classList.add("priority-modal-content");
       priorityModal.appendChild(priorityModalContent);
 
-       // Create and append icons to the priority modal content
-       const iconPrioritySources = [
+      // Create and append icons to the priority modal content
+      const iconPrioritySources = [
         "images/priority1.png",
         "images/priority2.png",
         "images/priority3.png",
-      ]; 
-
-/*
-
-// Define taskList and functions
-const taskList = document.querySelector('.taskList');
-
-const priorityLevels = {
-    'images/priority1.png': 1,
-    'images/priority2.png': 2,
-    'images/priority3.png': 3,
-  };
-  
-  function getPriorityLevel(iconSrc) {
-    return priorityLevels[iconSrc] || 0;
-  }
-
-
-
-
-function sortTasksByPriority() {
-    const tasks = Array.from(taskList.querySelectorAll('.newTask'));
-  
-    tasks.sort((taskA, taskB) => {
-      const priorityIconA = taskA.querySelector('.priorityBlock .selected-priority-icon img');
-      const priorityIconB = taskB.querySelector('.priorityBlock .selected-priority-icon img');
-      const priorityLevelA = getPriorityLevel(priorityIconA?.src);
-      const priorityLevelB = getPriorityLevel(priorityIconB?.src);
-      return priorityLevelB - priorityLevelA;
-    });
-  
-    // Remove all tasks from the list
-    tasks.forEach((task) => taskList.removeChild(task));
-  
-    // Re-append the tasks in the sorted order
-    tasks.forEach((task) => taskList.appendChild(task));
-  }
-*/
-
-
+      ];
 
       // Create and append icons to the priority modal content
-iconPrioritySources.forEach((iconSrc) => {
-    const iconPriority = document.createElement("img");
-    iconPriority.src = iconSrc;
-    iconPriority.classList.add("iconPriority");
-    priorityModalContent.appendChild(iconPriority); // Use priorityModalContent instead of modalContent
-    iconPriority.addEventListener("click", function () {
-      const selectedIconSrc = this.src;
-      const selectedPriorityIco = document.createElement("img");
-      selectedPriorityIco.src = selectedIconSrc; // Corrected variable name here
-      selectedPriorityIco.classList.add("selected-priority-icon"); // Add a class to the selected icon
-      priorityBlock.innerHTML = ""; // Clear existing content
-      priorityBlock.appendChild(selectedPriorityIco); // Use selectedPriorityIco instead of selectedIcon
-      priorityModal.style.display = "none";
-     //sortTasksByPriority();
-    });
-  });
+      iconPrioritySources.forEach((iconSrc) => {
+        const iconPriority = document.createElement("img");
+        iconPriority.src = iconSrc;
+        iconPriority.classList.add("iconPriority");
+        priorityModalContent.appendChild(iconPriority); // Use priorityModalContent instead of modalContent
+        iconPriority.addEventListener("click", function () {
+          const selectedIconSrc = this.src;
+          const selectedPriorityIco = document.createElement("img");
+          selectedPriorityIco.src = selectedIconSrc; // Corrected variable name here
+          selectedPriorityIco.classList.add("selected-priority-icon"); // Add a class to the selected icon
+          priorityBlock.innerHTML = ""; // Clear existing content
+          priorityBlock.appendChild(selectedPriorityIco); // Use selectedPriorityIco instead of selectedIcon
+          priorityModal.style.display = "none";
+          //sortTasksByPriority();
+        });
+      });
 
       document.body.appendChild(priorityModal); // Append iconModal to the body or another target element
 
-  
-      
       // Event listener to show the icon priority modal when priorityBlock is clicked
       priorityBlock.addEventListener("click", function (event) {
         const rect = priorityBlock.getBoundingClientRect();
@@ -106,22 +65,21 @@ iconPrioritySources.forEach((iconSrc) => {
         priorityModal.style.left = `${left}px`;
         priorityModal.style.top = `${top}px`;
         priorityModal.style.display = "block";
-       
       });
 
       // Event listener to hide modal when clicking outside the modal or category block
       window.addEventListener("click", function (event) {
         const isClickedInsideCategoryBlock =
-        priorityBlock.contains(event.target) ||
-        event.target === priorityBlock;
+          priorityBlock.contains(event.target) ||
+          event.target === priorityBlock;
         const isClickedInsideModal =
-        priorityModal.contains(event.target) || event.target === priorityModal;
+          priorityModal.contains(event.target) ||
+          event.target === priorityModal;
 
         if (!isClickedInsideCategoryBlock && !isClickedInsideModal) {
-            priorityModal.style.display = "none";
+          priorityModal.style.display = "none";
         }
       });
-
 
       const categoryBlock = document.createElement("div");
       categoryBlock.classList.add("categoryBlock");
@@ -149,8 +107,8 @@ iconPrioritySources.forEach((iconSrc) => {
         "images/grocery.png",
         "images/sport.png",
         "images/other.png",
-      ]; 
-      
+      ];
+
       // Replace with icon URLs
       iconSources.forEach((iconSrc) => {
         const icon = document.createElement("img");
@@ -223,53 +181,45 @@ iconPrioritySources.forEach((iconSrc) => {
       addTaskInput.value = "";
     }
   });
-  
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const taskList = document.querySelector(".taskList");
-    taskList.addEventListener("click", function (event) {
-      const clickedElement = event.target;
-      if (clickedElement.classList.contains("editButton")) {
-        const listItem = clickedElement.closest(".newTask");
-        const taskBlock = listItem.querySelector(".taskBlock");
-  
-        // Create a div for editing
-        const editText = document.createElement("div");
-        editText.textContent = taskBlock.textContent; // Set the text content
-        editText.classList.add("editInput");
-        editText.setAttribute("contentEditable", true); // Enable editing
-  
-        // Replace the task text with a div for editing
-        listItem.replaceChild(editText, taskBlock);
-  
-        // Event listener for updating the task text
-        editText.addEventListener("blur", function () {
-          taskBlock.textContent = editText.textContent;
-          listItem.replaceChild(taskBlock, editText);
-        });
-  
-        editText.focus(); // Focus on the div for editing
-      }
-    });
+  const taskList = document.querySelector(".taskList");
+  taskList.addEventListener("click", function (event) {
+    const clickedElement = event.target;
+    if (clickedElement.classList.contains("editButton")) {
+      const listItem = clickedElement.closest(".newTask");
+      const taskBlock = listItem.querySelector(".taskBlock");
+
+      // Create a div for editing
+      const editText = document.createElement("div");
+      editText.textContent = taskBlock.textContent; // Set the text content
+      editText.classList.add("editInput");
+      editText.setAttribute("contentEditable", true); // Enable editing
+
+      // Replace the task text with a div for editing
+      listItem.replaceChild(editText, taskBlock);
+
+      // Event listener for updating the task text
+      editText.addEventListener("blur", function () {
+        taskBlock.textContent = editText.textContent;
+        listItem.replaceChild(taskBlock, editText);
+      });
+
+      editText.focus(); // Focus on the div for editing
+    }
   });
-
-  document.addEventListener('DOMContentLoaded', function() {
-    const taskList = document.querySelector('.taskList');
-
-    taskList.addEventListener('click', function(event) {
-        const clickedElement = event.target;
-
-        if (clickedElement.classList.contains('deleteButton')) {
-            const listItem = clickedElement.closest('.newTask');
-            listItem.remove(); // Remove the entire list item
-        }
-    });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const taskList = document.querySelector(".taskList");
 
+  taskList.addEventListener("click", function (event) {
+    const clickedElement = event.target;
 
-
-
-
-
+    if (clickedElement.classList.contains("deleteButton")) {
+      const listItem = clickedElement.closest(".newTask");
+      listItem.remove(); // Remove the entire list item
+    }
+  });
+});
