@@ -59,8 +59,8 @@ h1 {
 }
 
 .addTaskInput:focus {
-  border-color: #2c94c5; /* For example, change the border color to blue */
-  outline: none; /* Remove the default outline when the input is focused */
+  border-color: #2c94c5;
+  outline: none; 
   background: #ebfee8;
 }
 
@@ -93,9 +93,14 @@ h1 {
   padding-left: 0px;
 }
 
-.newTask {
+.taskList :hover {
+  box-shadow: 0 4px 8px 0 rgb(231 218 218 / 20%),
+    0 6px 20px 0 rgb(229 214 214 / 19%);
+  background-color: #f6f1f1;
+}
+
+.taskToDoBlock {
   background: #f0f9ff;
-/*padding-left: 10px;*/
   margin-bottom: 3px;
   display: flex;
   align-items: center;
@@ -103,136 +108,116 @@ h1 {
   width: 672px;
 }
 
-.taskList li:hover {
-  box-shadow: 0 4px 8px 0 rgb(231 218 218 / 20%),
-    0 6px 20px 0 rgb(229 214 214 / 19%);
-  background-color: #f6f1f1;
+.priorityBlock {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
-.priorityBlock{
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-  }
-
-  .priorityImage
-  {
-      width: 30px;
-      height: 30px;
-  }
-  
-.categoryBlock{
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-  }
-
-  .priorityBlock{
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-  }
-
-.modal {
-    display: none;
-    position: absolute;
-    z-index: 1;
-    /* Additional styling for the modal appearance */
-    background-color: #fff;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    /* Additional styles for better visibility */
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
+.priorityImage {
+  width: 30px;
+  height: 30px;
 }
 
 .priorityModal {
-    display: none;
-    position: absolute;
-    z-index: 1;
-    /* Additional styling for the modal appearance */
-    background-color: #fff;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    /* Additional styles for better visibility */
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-.modal-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 5px;
+  display: none;
+  position: absolute;
+  z-index: 1;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-.priority-modal-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    padding: 10px;
-    background-color: white;
-    border-radius: 5px;
-}
-.icon{
-    width: 45px;
-    height: 45px;
+.priorityModalContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
 }
 
-.iconPriority{
-    width: 45px;
-    height: 45px;
-} 
+.priorityIcon {
+  width: 45px;
+  height: 45px;
+}
 
-.selected-icon {
-    width: 30px;
-    height: 30px;
-}  
+.prioritySelectedIcon {
+  width: 30px;
+  height: 30px;
+}
 
-.selected-priority-icon {
-    width: 30px;
-    height: 30px;
-} 
+.categoryBlock {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
 
-.categoryImage
-{
-    width: 30px;
-    height: 30px;
-}  
+.categoryImage {
+  width: 30px;
+  height: 30px;
+}
+
+.categoryModal {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.categoryModalContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.categoryIcon {
+  width: 45px;
+  height: 45px;
+}
+
+.categorySelectedIcon {
+  width: 30px;
+  height: 30px;
+}
 
 .checkbox {
   width: 30px;
   height: 30px;
 }
 
-.taskBlock {
+.toDoTextBlock {
   width: 470px;
   padding-left: 10px;
   margin: 0px;
   margin-left: 5px;
   font: italic 18px Monospace;
-  /*max-height: 100px; /* Example value */
   overflow: hidden;
   display: inline-block;
   word-wrap: break-word;
   line-height: 1.5;
 }
 
-.checkbox:checked ~ .taskBlock {
+.checkbox:checked ~ .toDoTextBlock {
   text-decoration: line-through; /* Add line-through when checkbox is checked */
 }
 
@@ -248,6 +233,7 @@ h1 {
   cursor: pointer;
   background-color: transparent;
 }
+
 .deleteButton:hover {
   width: 30px;
   height: 30px;
@@ -272,6 +258,7 @@ h1 {
   cursor: pointer;
   background-color: transparent;
 }
+
 .editButton:hover {
   width: 30px;
   height: 30px;
@@ -285,36 +272,21 @@ h1 {
 }
 
 .editInput {
-    width: 460px;
-    padding-left: 10px;
-    margin: 0px;
-    margin-left: 5px;
-    font: italic 18px Monospace;
-    display: inline-block;
-    word-wrap: break-word;
-    line-height: 1.5;
-  }
-  .editInput:focus {
-    border: none;
-    outline: none; /* Remove the default outline when the input is focused */
-    background: #ffffff;
-    margin-left: 5px;
-    display: inline-block;
-    word-wrap: break-word;
-  }
-  
+  width: 460px;
+  padding-left: 10px;
+  margin: 0px;
+  margin-left: 5px;
+  font: italic 18px Monospace;
+  display: inline-block;
+  word-wrap: break-word;
+  line-height: 1.5;
+}
 
-
-
-  .taskBlock {
-    width: 425px;
-    padding-left: 10px;
-    margin: 0px;
-    margin-left: 5px;
-    font: italic 18px Monospace;
-    /*max-height: 100px; /* Example value */
-    overflow: hidden;
-    display: inline-block;
-    word-wrap: break-word;
-    line-height: 1.5;
-  }
+.editInput:focus {
+  border: none;
+  outline: none; /* Remove the default outline when the input is focused */
+  background: #ffffff;
+  margin-left: 5px;
+  display: inline-block;
+  word-wrap: break-word;
+}
