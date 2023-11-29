@@ -32,7 +32,7 @@ const postTask = (req, res) => {
   const Done_idDone = 2;
   const Category_idCategory = 6;
   const Priority_idPriority = 4;
-  const idTasks = Date.now().toString(); // Create a unique task ID 
+  const idTasks = req.body.idTasks;
   const insertTaskQuery = `INSERT INTO tasks (idTasks, whatToDo, Done_idDone, Category_idCategory, Priority_idPriority) VALUES (?, ?, ?, ?, ?)`;
   db.query(
     insertTaskQuery,
@@ -104,7 +104,6 @@ const putTaskById = (req, res) => {
 // Delete task by ID (DELETE request)
 const deleteTaskById = (req, res) => {
   const taskId = req.params.id;
-
   const deleteTaskQuery = `DELETE FROM tasks WHERE idTasks=?`;
 
   db.query(deleteTaskQuery, [taskId], (err, result) => {

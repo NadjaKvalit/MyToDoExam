@@ -5,23 +5,8 @@ const port = 3000 //port är nätverksanslutning för utbyte av information mell
 const { v4: uuidv4 } = require('uuid');
 const mysql = require('mysql2');
 const bodyParser = require('body-parser');
-
-
-// Create a MySQL database connection
-const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'root',
-    database: 'todolist'
-  });
-
-  // Connect to MySQL
-db.connect((err) => {
-    if (err) {
-      throw err;
-    }
-    console.log('Connected to MySQL database');
-  });
+const cors = require('cors');
+app.use(cors());
 
 // med metod "use" läggs olika "plugins" eller "routes" till objektet app. 
 //express.json() function is a middleware function in Express. It parses incoming requests (data som står i "body") with JSON payloads (needs for POST or PUT methods).
