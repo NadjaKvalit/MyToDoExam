@@ -22,4 +22,4 @@ app.use(bodyParser.json());
   //Här startar vi servern genom port som nämndes ovan
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
-  })
+  });
