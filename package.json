@@ -1,0 +1,22 @@
+{
+  "name": "project_todo-list_code",
+  "version": "1.0.0",
+  "description": "Exam Project \"My To-Do List\" development with testing",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NadjaKvalit/MyToDoExam.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NadjaKvalit/MyToDoExam/issues"
+  },
+  "homepage": "https://github.com/NadjaKvalit/MyToDoExam#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.40.1",
+    "@types/node": "^20.10.3"
+  }
+}
