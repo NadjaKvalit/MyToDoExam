@@ -46,6 +46,7 @@ function createTaskElementFromDB(task) {
 function createPriorityBlock() {
   const priorityBlock = document.createElement("div");
   priorityBlock.classList.add("priorityBlock");
+  priorityBlock.setAttribute("data-testid", "priority");
   const priorityImage = document.createElement("img");
   priorityImage.classList.add("priorityImage");
   priorityImage.src = "images/priority.png";
@@ -56,6 +57,7 @@ function createPriorityBlock() {
 function createPriorityBlockFromDB(id) {
   const priorityBlock = document.createElement("div");
   priorityBlock.classList.add("priorityBlock");
+  priorityBlock.setAttribute("data-testid", "priority");
   priorityBlock.id = id;
   const priorityImage = document.createElement("img");
   priorityImage.classList.add("priorityImage");
@@ -80,6 +82,7 @@ function createPriorityBlockFromDB(id) {
 function createCategoryBlock() {
   const categoryBlock = document.createElement("div");
   categoryBlock.classList.add("categoryBlock");
+  categoryBlock.setAttribute("data-testid", "category");
   const categoryImage = document.createElement("img");
   categoryImage.classList.add("categoryImage");
   categoryImage.src = "images/category.png";
@@ -90,6 +93,7 @@ function createCategoryBlock() {
 function createCategoryBlockFromDB(id) {
   const categoryBlock = document.createElement("div");
   categoryBlock.classList.add("categoryBlock");
+  categoryBlock.setAttribute("data-testid", "category");
   categoryBlock.id = id;
   const categoryImage = document.createElement("img");
   categoryImage.classList.add("categoryImage");
@@ -121,6 +125,7 @@ function createCheckbox() {
   const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
   checkbox.classList.add("checkbox");
+  checkbox.setAttribute("data-testid", "done_status");
   return checkbox;
 }
 
@@ -128,6 +133,7 @@ function createCheckboxFromDB(id) {
   const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
   checkbox.classList.add("checkbox");
+  checkbox.setAttribute("data-testid", "done_status");
   checkbox.id = id;
   switch (id) {
     case 1:
@@ -150,6 +156,7 @@ function createToDoTextBlock(taskText) {
 function createButton(className) {
   const button = document.createElement("button");
   button.classList.add(className);
+  button.setAttribute("data-testid", className);
   return button;
 }
 
@@ -490,6 +497,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const editText = document.createElement("div");
       editText.textContent = toDoTextBlock.textContent; // Set the text content
       editText.classList.add("editInput");
+      editText.setAttribute("data-testid", "editInput");
       editText.setAttribute("contentEditable", true); // Enable editing
       // Replace the task text with a div for editing
       listItem.replaceChild(editText, toDoTextBlock);

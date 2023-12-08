@@ -61,7 +61,7 @@ h1 {
 .addTaskInput:focus {
   border-color: #2c94c5;
   outline: none; 
-  background: #ebfee8;
+  background-color: rgb(235, 255, 232);
 }
 
 .add-btn {
