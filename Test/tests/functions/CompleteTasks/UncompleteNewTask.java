@@ -29,8 +29,8 @@ public class UncompleteNewTask extends TestBase {
         // Interactions with elements and Assertions
         mainPage.openPage();
         mainPage.addNewTask();
-        newTaskListItem = mainPage.getNewTaskListItem();
         idOfNewTaskListItem = mainPage.getiIdOfNewTaskListItem();
+        newTaskListItem = mainPage.getTaskListItem(idOfNewTaskListItem);
         doneOfNewTask = newTaskListItem.getByTestId("done_status");
         doneOfNewTask.check();
         doneOfNewTask.uncheck();

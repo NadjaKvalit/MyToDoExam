@@ -1,7 +1,7 @@
 function createTaskElement(taskText) {
   const taskToDoBlock = document.createElement("li");
   taskToDoBlock.id = Date.now().toString();
-  taskToDoBlock.classList.add("taskToDoBlock");
+  taskToDoBlock.classList.add("taskToDoBlock");  
   const priorityBlock = createPriorityBlock();
   const categoryBlock = createCategoryBlock();
   const checkbox = createCheckbox();
@@ -22,7 +22,7 @@ function createTaskElement(taskText) {
 
 function createTaskElementFromDB(task) {
   const taskToDoBlock = document.createElement("li");
-  taskToDoBlock.classList.add("taskToDoBlock");
+  taskToDoBlock.classList.add("taskToDoBlock");  
   taskToDoBlock.id = task.idTasks;
   const idPriority = task.Priority_idPriority;
   const priorityBlock = createPriorityBlockFromDB(idPriority);
@@ -63,16 +63,20 @@ function createPriorityBlockFromDB(id) {
   priorityImage.classList.add("priorityImage");
   switch (id) {
     case 1:
-      priorityImage.src = "images/priority1.png";
+      priorityImage.src = "images/priority_high.png";
+      priorityImage.alt = "high";
       break;
     case 2:
-      priorityImage.src = "images/priority2.png";
+      priorityImage.src = "images/priority_medium.png";
+      priorityImage.alt = "medium";
       break;
     case 3:
-      priorityImage.src = "images/priority3.png";
+      priorityImage.src = "images/priority_low.png";
+      priorityImage.alt = "low";
       break;
     case 4:
       priorityImage.src = "images/priority.png";
+      priorityImage.alt = "no_priority";
       break;
   }
   priorityBlock.appendChild(priorityImage);
@@ -85,6 +89,7 @@ function createCategoryBlock() {
   categoryBlock.setAttribute("data-testid", "category");
   const categoryImage = document.createElement("img");
   categoryImage.classList.add("categoryImage");
+  categoryImage.alt = "category";
   categoryImage.src = "images/category.png";
   categoryBlock.appendChild(categoryImage);
   return categoryBlock;
@@ -100,21 +105,27 @@ function createCategoryBlockFromDB(id) {
   switch (id) {
     case 1:
       categoryImage.src = "images/work.png";
+      categoryImage.alt = "work";
       break;
     case 2:
       categoryImage.src = "images/study.png";
+      categoryImage.alt = "study";
       break;
     case 3:
       categoryImage.src = "images/grocery.png";
+      categoryImage.alt = "grocery";
       break;
     case 4:
       categoryImage.src = "images/sport.png";
+      categoryImage.alt = "sport";
       break;
     case 5:
       categoryImage.src = "images/other.png";
+      categoryImage.alt = "other";
       break;
     case 6:
       categoryImage.src = "images/category.png";
+      categoryImage.alt = "category";
       break;
   }
   categoryBlock.appendChild(categoryImage);
@@ -150,6 +161,8 @@ function createToDoTextBlock(taskText) {
   const toDoTextBlock = document.createElement("div");
   toDoTextBlock.textContent = taskText;
   toDoTextBlock.classList.add("toDoTextBlock");
+  toDoTextBlock.setAttribute("data-testid", "task_text");
+  //oDoTextBlock.setAttribute("contentEditable", false); // Unenable editing
   return toDoTextBlock;
 }
 
@@ -163,9 +176,9 @@ function createButton(className) {
 function handlePriorityBlockClick(priorityBlock) {
   const priorityModal = getOrCreatePriorityModal();
   const iconPrioritySources = [
-    "images/priority1.png",
-    "images/priority2.png",
-    "images/priority3.png",
+    "images/priority_high.png",
+    "images/priority_medium.png",
+    "images/priority_low.png",
   ];
   const priorityModalContent = priorityModal.querySelector(
     ".priorityModalContent"
@@ -175,6 +188,9 @@ function handlePriorityBlockClick(priorityBlock) {
     const priorityIcon = document.createElement("img");
     priorityIcon.src = iconSrc;
     priorityIcon.classList.add("priorityIcon");
+
+    priorityIcon.alt=iconSrc.split("/priority_").pop().split(".")[0];
+
     priorityModalContent.appendChild(priorityIcon);
     priorityIcon.addEventListener("click", function () {
       const selectedIconSrc = this.src;
@@ -185,12 +201,15 @@ function handlePriorityBlockClick(priorityBlock) {
       priorityBlock.appendChild(prioritySelectedIcon);
       priorityModal.style.display = "none";
       console.log(selectedIconSrc);
-      if (selectedIconSrc.endsWith("images/priority1.png")) {
+      if (selectedIconSrc.endsWith("images/priority_high.png")) {
         priorityBlock.id = 1;
-      } else if (selectedIconSrc.endsWith("images/priority2.png")) {
+        prioritySelectedIcon.alt = "high";
+      } else if (selectedIconSrc.endsWith("images/priority_medium.png")) {
         priorityBlock.id = 2;
-      } else if (selectedIconSrc.endsWith("images/priority3.png")) {
+        prioritySelectedIcon.alt = "medium";
+      } else if (selectedIconSrc.endsWith("images/priority_low.png")) {
         priorityBlock.id = 3;
+        prioritySelectedIcon.alt = "low";
       }
       const listItem = priorityBlock.closest(".taskToDoBlock");
       const idTasks = listItem.id;
@@ -244,6 +263,7 @@ function getOrCreatePriorityModal() {
   priorityModal.style.display = "none";
   const priorityModalContent = document.createElement("div");
   priorityModalContent.classList.add("priorityModalContent");
+  priorityModalContent.setAttribute("data-testid", "priority_modal");
   priorityModal.appendChild(priorityModalContent);
   document.body.appendChild(priorityModal);
 
@@ -288,26 +308,31 @@ function handleCategoryBlockClick(categoryBlock) {
     const categoryIcon = document.createElement("img");
     categoryIcon.src = iconSrc;
     categoryIcon.classList.add("categoryIcon");
+    categoryIcon.alt=iconSrc.split("/").pop().split(".")[0];
     categoryModalContent.appendChild(categoryIcon);
     categoryIcon.addEventListener("click", function () {
       const selectedIconSrc = this.src;
       const categorySelectedIcon = document.createElement("img");
       categorySelectedIcon.src = selectedIconSrc;
-      categorySelectedIcon.classList.add("categorySelectedIcon");
+      categorySelectedIcon.classList.add("categoryImage");
       categoryBlock.innerHTML = "";
       categoryBlock.appendChild(categorySelectedIcon);
-      categoryModal.style.display = "none";
-
+      categoryModal.style.display = "none";      
       if (selectedIconSrc.endsWith("images/work.png")) {
         categoryBlock.id = 1;
-      } else if (selectedIconSrc.endsWith("images/study.png")) {
+        categorySelectedIcon.alt = "work";
+            } else if (selectedIconSrc.endsWith("images/study.png")) {
         categoryBlock.id = 2;
+        categorySelectedIcon.alt = "study";
       } else if (selectedIconSrc.endsWith("images/grocery.png")) {
         categoryBlock.id = 3;
+        categorySelectedIcon.alt = "grocery";
       } else if (selectedIconSrc.endsWith("images/sport.png")) {
         categoryBlock.id = 4;
+        categorySelectedIcon.alt = "sport";
       } else if (selectedIconSrc.endsWith("images/other.png")) {
         categoryBlock.id = 5;
+        categorySelectedIcon.alt = "other";
       }
       const listItem = categoryBlock.closest(".taskToDoBlock");
       const idTasks = listItem.id;
@@ -318,6 +343,7 @@ function handleCategoryBlockClick(categoryBlock) {
         Category_idCategory: categoryBlock.id,
         Priority_idPriority: listItem.querySelector(".priorityBlock").id,
       };
+
       fetch(`http://localhost:3000/tasks/${idTasks}`, {
         method: "PUT",
         headers: {
@@ -363,6 +389,7 @@ function getOrCreateCategoryModal() {
   categoryModal.style.display = "none";
   const categoryModalContent = document.createElement("div");
   categoryModalContent.classList.add("categoryModalContent");
+  categoryModalContent.setAttribute("data-testid", "category_modal");
   categoryModal.appendChild(categoryModalContent);
   document.body.appendChild(categoryModal);
   window.addEventListener("click", function (event) {
@@ -505,7 +532,8 @@ document.addEventListener("DOMContentLoaded", function () {
       editText.addEventListener("blur", function () {
         toDoTextBlock.textContent = editText.textContent;
         listItem.replaceChild(toDoTextBlock, editText);
-
+        //toDoTextBlock.setAttribute("contentEditable", false); // Unenable editing
+        
         // API: PUT REQUEST TO UPTADE TEXT IN TASK IN DB
         const idTasks = listItem.id;
         const toDoText = toDoTextBlock.textContent;

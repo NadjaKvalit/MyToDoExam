@@ -12,28 +12,32 @@ public class MainPage extends PageBase {
 
     // Variables
     String newToDo = "Task 4";
-      int doneIdOfNewTask = 2;
+    int doneIdOfNewTask = 2;
     int priorityBlockIdOfNewTask = 4;
     int categoryBlockIdOfNewTask = 6;
     String idOfNewTaskListItem;
     int doneStatusIdOfCompletedTask = 1;
     int doneStatusIdOfUncompletedTask = 2;
+    int priorityId;
+    String priorityName;
+    int categoryId;
+    String categoryName;
 
-    //TESTDATA
+    // TESTDATA
     int countTestDataTasks = 3;
-    //Task 1
+    // Task 1
     String Task1IdOfListItem = "1701346042001";
     String Task1ToDo = "Task 1";
     int Task1DoneId = 1; // done status "completed"
     int Task1CategoryBlockId = 1; // category "work"
     int Task1PriorityBlockId = 4; // priority "no priority"
-    //Task 2
+    // Task 2
     String Task2IdOfListItem = "1701346042002";
     String Task2ToDo = "Task 2";
     int Task2DoneId = 2; // done status "uncompleted"
     int Task2CategoryBlockId = 2; // category "study"
     int Task2PriorityBlockId = 1; // priority "high"
-    //Task 3
+    // Task 3
     String Task3IdOfListItem = "1701346042003";
     String Task3ToDo = "Task 3";
     int Task3DoneId = 1; // done status "completed"
@@ -89,17 +93,17 @@ public class MainPage extends PageBase {
         return idOfNewTaskListItem;
     }
 
-        public Locator getNewTaskListItem() {
+    public Locator getNewTaskListItem() {
         newTaskListItem = tasksList.locator("li:last-child");
         return newTaskListItem;
     }
 
-            public Locator getTaskListItem(String id) {
+    public Locator getTaskListItem(String id) {
         taskListItem = tasksList.locator("//li[@id='" + id + "']");
         return taskListItem;
     }
 
-        public String getTask1IdOfListItem() {
+    public String getTask1IdOfListItem() {
         return Task1IdOfListItem;
     }
 
@@ -159,19 +163,90 @@ public class MainPage extends PageBase {
         return Task3PriorityBlockId;
     }
 
-        public int getCountTestDataTasks() {
+    public int getCountTestDataTasks() {
         return countTestDataTasks;
     }
 
-        public int getDoneStatusIdOfCompletedTask() {
+    public int getDoneStatusIdOfCompletedTask() {
         return doneStatusIdOfCompletedTask;
     }
 
-            public int getDoneStatusIdOfUncompletedTask() {
+    public int getDoneStatusIdOfUncompletedTask() {
         return doneStatusIdOfUncompletedTask;
     }
 
-      public String getNewToDo() {
+    public String getNewToDo() {
         return newToDo;
+    }
+
+    public int getCategoryId(String category) {
+
+        if (category == "work") {
+            categoryId = 1;
+        } else if (category == "study") {
+            categoryId = 2;
+        } else if (category == "grocery") {
+            categoryId = 3;
+        } else if (category == "sport") {
+            categoryId = 4;
+        } else if (category == "other") {
+            categoryId = 5;
+        }
+        return categoryId;
+    }
+
+    public String getCategoryName(int categoryId) {
+
+        switch (categoryId) {
+            case 1:
+                categoryName = "work";
+                break;
+            case 2:
+                categoryName = "study";
+                break;
+            case 3:
+                categoryName = "grocery";
+                break;
+            case 4:
+                categoryName = "sport";
+                break;
+            case 5:
+                categoryName = "other";
+                break;
+        }
+        return categoryName;
+    }
+
+    public int getPriorityId(String priority) {
+
+        if (priority == "high") {
+            priorityId = 1;
+        } else if (priority == "medium") {
+            priorityId = 2;
+        } else if (priority == "low") {
+            priorityId = 3;
+        } else if (priority == "no_priority") {
+            priorityId = 4;
+        }
+        return priorityId;
+    }
+
+    public String getPriorityName(int priorityId) {
+
+        switch (priorityId) {
+            case 1:
+                priorityName = "high";
+                break;
+            case 2:
+                priorityName = "medium";
+                break;
+            case 3:
+                priorityName = "low";
+                break;
+            case 4:
+                priorityName = "no_priority";
+                break;                 
+        }
+        return priorityName;
     }
 }

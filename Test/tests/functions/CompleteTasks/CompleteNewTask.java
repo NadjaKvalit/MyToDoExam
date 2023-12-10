@@ -29,8 +29,8 @@ public class CompleteNewTask extends TestBase {
         // Interactions with elements and Assertions
         mainPage.openPage();
         mainPage.addNewTask();
-        newTaskListItem = mainPage.getNewTaskListItem();
         idOfNewTaskListItem = mainPage.getiIdOfNewTaskListItem();
+        newTaskListItem = mainPage.getTaskListItem(idOfNewTaskListItem);
         doneOfNewTask = newTaskListItem.getByTestId("done_status");
         doneOfNewTask.check();
         assertThat(doneOfNewTask).isChecked(); // Assert done status is completed, The checkbox is checked.
