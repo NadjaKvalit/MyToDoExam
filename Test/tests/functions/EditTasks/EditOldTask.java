@@ -57,10 +57,6 @@ public class EditOldTask extends TestBase {
         // Verify that test data from DB in response is correct
         assertEquals(getTaskByIDResponse.getWhatToDo(), editNewToDo); //Assert Task description for the task is updated in the database.
         assertThat(apiResponse).isOK(); // Response status is OK
-
-        editButtonOfOldTask.click();
-        editInputOfOldTask.fill(mainPage.getTask1ToDo());
-        page.click("body"); // Click outside the input field
     }   
 }
 

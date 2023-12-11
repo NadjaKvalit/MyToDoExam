@@ -61,9 +61,5 @@ public class UpdateOldTaskCategory extends TestBase {
         assertEquals(getTaskByIDResponse.getCategory_idCategory(), newCategoryIdOfOldTask);
 
         assertThat(apiResponse).isOK(); // Response status is OK
-
-        categoryButtonOfOldTask.click();
-        selectCategoryIcon = page.getByAltText(mainPage.getCategoryName(mainPage.getTask2CategoryBlockId()));
-        selectCategoryIcon.click();
     }
 }

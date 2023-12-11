@@ -51,7 +51,5 @@ public class UncompleteOldTask extends TestBase {
         // Verify that test data from DB in response is correct
         assertEquals(getTaskByIDResponse.getDone_idDone(), mainPage.getDoneStatusIdOfUncompletedTask()); //Done-status for the task is updated in the database into doneID = 1.
         assertThat(apiResponse).isOK(); // Response status is OK
-
-        doneOfOldTask.check();
     }
 }

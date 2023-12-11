@@ -62,14 +62,6 @@ public class UpdateOldTaskPriority extends TestBase {
         assertEquals(getTaskByIDResponse.getPriority_idPriority(), newPriorityIdOfOldTask);
 
         assertThat(apiResponse).isOK(); // Response status is OK
-        
-        priorityButtonOfOldTask.click();
-        if(mainPage.getPriorityName(mainPage.getTask1PriorityBlockId())=="no_priority"){
-
-        }else{        
-        selectPriorityIcon = page.getByAltText(mainPage.getPriorityName(mainPage.getTask1PriorityBlockId()));
-        selectPriorityIcon.click();
-}
     }
 }
 
