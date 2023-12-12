@@ -1,6 +1,6 @@
 package todo_api;
 
-public class GetTaskByID {
+public class GETTaskByID {
 
 	public String idTasks;
 	public String whatToDo;

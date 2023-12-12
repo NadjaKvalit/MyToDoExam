@@ -28,7 +28,7 @@ public class TestBase {
     }
 
     @BeforeEach
-    void createContextAndPage() {
+    protected void createContextAndPage() {
         context = browser.newContext();
         page = context.newPage();
     }

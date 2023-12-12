@@ -29,9 +29,13 @@ db.connect((err) => {
 //"Response" är tvärtom, dvs alltning som skickas/svaras från servern till klienten (till webbläsaren)
 const postTask = (req, res) => {
   const whatToDo = req.body.whatToDo;
+  /*
   const Done_idDone = 2;
   const Category_idCategory = 6;
-  const Priority_idPriority = 4;
+  const Priority_idPriority = 4;*/
+  const Done_idDone = req.body.Done_idDone;
+  const Category_idCategory = req.body.Category_idCategory;
+  const Priority_idPriority = req.body.Priority_idPriority;
   const idTasks = req.body.idTasks;
   const insertTaskQuery = `INSERT INTO tasks (idTasks, whatToDo, Done_idDone, Category_idCategory, Priority_idPriority) VALUES (?, ?, ?, ?, ?)`;
   db.query(

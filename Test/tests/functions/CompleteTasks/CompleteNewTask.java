@@ -9,7 +9,7 @@ import com.google.gson.GsonBuilder;
 import com.microsoft.playwright.APIResponse;
 import com.microsoft.playwright.Locator;
 import testbase.TestBase;
-import todo_api.GetTaskByID;
+import todo_api.GETTaskByID;
 import pages.MainPage;
 
 public class CompleteNewTask extends TestBase {
@@ -48,7 +48,7 @@ public class CompleteNewTask extends TestBase {
         Gson gson = builder.create();
 
         // Deserialize JSON string to Java object
-        GetTaskByID getTaskByIDResponse = gson.fromJson(apiResponse.text(), GetTaskByID.class);
+        GETTaskByID getTaskByIDResponse = gson.fromJson(apiResponse.text(), GETTaskByID.class);
 
         // Verify that test data from DB in response is correct
         assertEquals(getTaskByIDResponse.getDone_idDone(), mainPage.getDoneStatusIdOfCompletedTask()); //Done-status for the task is updated in the database into doneID = 1.
