@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: functions.TasksCategory.TestUpdateOldTaskCategory
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.638 s - in functions.TasksCategory.TestUpdateOldTaskCategory
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.566 s - in functions.TasksCategory.TestUpdateOldTaskCategory
