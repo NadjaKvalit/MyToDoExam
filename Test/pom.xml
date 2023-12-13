@@ -6,6 +6,7 @@
   <groupId>PROJECT_TODO-LIST_Code</groupId>
   <artifactId>PROJECT_TODO-LIST_Code</artifactId>
   <version>0.1-SNAPSHOT</version>
+  
   <name>PROJECT_TODO-LIST_Code</name>      
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
