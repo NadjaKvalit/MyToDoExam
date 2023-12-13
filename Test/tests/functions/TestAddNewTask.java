@@ -11,7 +11,7 @@ import testbase.TestBase;
 import todo_api.GETTaskByID;
 import pages.MainPage;
 
-public class AddNewTask extends TestBase {
+public class TestAddNewTask extends TestBase {
 
   @Test
   void addNewTask() {

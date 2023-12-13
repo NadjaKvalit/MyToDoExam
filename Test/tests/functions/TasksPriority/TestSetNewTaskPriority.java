@@ -14,7 +14,7 @@ import testbase.TestBase;
 import todo_api.GETTaskByID;
 import pages.MainPage;
 
-public class SetNewTaskPriority extends TestBase {
+public class TestSetNewTaskPriority extends TestBase {
     
     @Test
     void setNewTaskPriorityy() {

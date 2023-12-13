@@ -6,7 +6,8 @@ import com.microsoft.playwright.Response;
 public class PageBase {
 	
     //String url = "https://playwright.dev/";
-    String url = "http://127.0.0.1:5500/Frontend/index.html";
+    String url = "127.0.0.1:5500";
+	//String url = "http://127.0.0.1:5500/Frontend/index.html";
 
 	public Page page;
 

@@ -4,13 +4,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 import org.junit.jupiter.api.Test;
 
-import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.Locator;
 import testbase.TestBase;
 import todo_api.POSTTask;
 import pages.MainPage;
 
-public class DisplayTasks extends TestBase {
+public class TestDisplayTasks extends TestBase {
 
     @Test
     void displayTasks() {

@@ -8,7 +8,7 @@ import com.microsoft.playwright.Locator;
 import testbase.TestBase;
 import pages.MainPage;
 
-public class DeleteOldTask extends TestBase {
+public class TestDeleteOldTask extends TestBase {
     @Test
     void deleteOldTask() {
         // Setup

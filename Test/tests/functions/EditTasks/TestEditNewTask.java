@@ -12,7 +12,7 @@ import testbase.TestBase;
 import todo_api.GETTaskByID;
 import pages.MainPage;
 
-public class EditNewTask extends TestBase {
+public class TestEditNewTask extends TestBase {
     @Test
     void editNewTask() {
         // Setup

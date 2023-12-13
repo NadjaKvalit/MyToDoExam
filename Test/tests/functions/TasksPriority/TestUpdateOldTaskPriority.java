@@ -11,7 +11,7 @@ import testbase.TestBase;
 import todo_api.GETTaskByID;
 import pages.MainPage;
 
-public class UpdateOldTaskPriority extends TestBase {
+public class TestUpdateOldTaskPriority extends TestBase {
     
     @Test
     void updateOldTaskPriorityy() {
