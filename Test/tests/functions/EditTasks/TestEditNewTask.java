@@ -8,6 +8,9 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.microsoft.playwright.APIResponse;
 import com.microsoft.playwright.Locator;
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.options.AriaRole;
+
 import testbase.TestBase;
 import todo_api.GETTaskByID;
 import pages.MainPage;
@@ -27,10 +30,12 @@ public class TestEditNewTask extends TestBase {
         Locator deleteButtonOfNewTask;
         Locator newTaskListItem;
         Locator editInputOfNewTask;
+        Locator logo;
 
         // Interactions with elements and Assertions
         mainPage.openPage();
         mainPage.addNewTask();
+        logo = page.getByRole(AriaRole.HEADING,new Page.GetByRoleOptions().setName("MyToDo"));
         idOfNewTaskListItem = mainPage.getiIdOfNewTaskListItem();
         newTaskListItem = mainPage.getTaskListItem(idOfNewTaskListItem);
         editButtonOfNewTask = newTaskListItem.getByTestId("editButton");
@@ -40,10 +45,11 @@ public class TestEditNewTask extends TestBase {
         assertThat(editInputOfNewTask).hasText(mainPage.getNewToDo()); //The input field of the task is appeared containing the current text
         assertThat(editInputOfNewTask).isEditable(); //The input field is available for editing.
         editInputOfNewTask.fill(editNewToDo);
+       // page.waitForTimeout(1000);
         assertThat(editInputOfNewTask).hasText(editNewToDo); //The content of the input field is updated based on the editing description text
-        
-        page.click("body"); // Click outside the input field
-
+        //page.waitForTimeout(1000);
+        logo.click();// Click outside the input field
+        //newTaskListItem = mainPage.getTaskListItem(idOfNewTaskListItem);
         assertThat(newTaskListItem).hasText(editNewToDo); // Assert the new edited task description is displayed
         // Assert that Editing mode is inactive
         assertTrue(newTaskListItem.getByTestId("task_text").getAttribute("contenteditable") == null);

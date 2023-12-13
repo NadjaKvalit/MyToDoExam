@@ -1,0 +1,156 @@
+# Created at 2023-12-13T11:52:00.631
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream 'Downloading Chromium 116.0.5845.82 (playwright build v1076)[2m from https://playwright.azureedge.net/builds/chromium/1076/chromium-win64.zip[22m'.
+
+# Created at 2023-12-13T11:52:01.783
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|                                                                                |   0% of 116 Mb'.
+
+# Created at 2023-12-13T11:52:05.431
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■                                                                        |  10% of 116 Mb'.
+
+# Created at 2023-12-13T11:52:09.448
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■                                                                |  20% of 116 Mb'.
+
+# Created at 2023-12-13T11:52:10.519
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 116 Mb'.
+
+# Created at 2023-12-13T11:52:11.545
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 116 Mb'.
+
+# Created at 2023-12-13T11:52:12.581
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 116 Mb'.
+
+# Created at 2023-12-13T11:52:13.883
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 116 Mb'.
+
+# Created at 2023-12-13T11:52:14.917
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 116 Mb'.
+
+# Created at 2023-12-13T11:52:18.546
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 116 Mb'.
+
+# Created at 2023-12-13T11:52:19.757
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 116 Mb'.
+
+# Created at 2023-12-13T11:52:21.851
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 116 Mb'.
+
+# Created at 2023-12-13T11:52:21.852
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream 'Chromium 116.0.5845.82 (playwright build v1076) downloaded to C:\Windows\system32\config\systemprofile\AppData\Local\ms-playwright\chromium-1076'.
+
+# Created at 2023-12-13T11:52:22.244
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream 'Downloading FFMPEG playwright build v1009[2m from https://playwright.azureedge.net/builds/ffmpeg/1009/ffmpeg-win64.zip[22m'.
+
+# Created at 2023-12-13T11:52:22.278
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|                                                                                |   1% of 1.4 Mb'.
+
+# Created at 2023-12-13T11:52:22.314
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■                                                                        |  10% of 1.4 Mb'.
+
+# Created at 2023-12-13T11:52:22.374
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■                                                                |  20% of 1.4 Mb'.
+
+# Created at 2023-12-13T11:52:22.401
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 1.4 Mb'.
+
+# Created at 2023-12-13T11:52:22.419
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 1.4 Mb'.
+
+# Created at 2023-12-13T11:52:22.440
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 1.4 Mb'.
+
+# Created at 2023-12-13T11:52:22.456
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 1.4 Mb'.
+
+# Created at 2023-12-13T11:52:22.474
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 1.4 Mb'.
+
+# Created at 2023-12-13T11:52:22.494
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 1.4 Mb'.
+
+# Created at 2023-12-13T11:52:22.519
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 1.4 Mb'.
+
+# Created at 2023-12-13T11:52:22.732
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 1.4 Mb'.
+
+# Created at 2023-12-13T11:52:22.733
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream 'FFMPEG playwright build v1009 downloaded to C:\Windows\system32\config\systemprofile\AppData\Local\ms-playwright\ffmpeg-1009'.
+
+# Created at 2023-12-13T11:52:23.581
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream 'Downloading Firefox 115.0 (playwright build v1422)[2m from https://playwright.azureedge.net/builds/firefox/1422/firefox-win64.zip[22m'.
+
+# Created at 2023-12-13T11:52:24.924
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|                                                                                |   0% of 79.5 Mb'.
+
+# Created at 2023-12-13T11:52:27.371
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■                                                                        |  10% of 79.5 Mb'.
+
+# Created at 2023-12-13T11:52:28.760
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■                                                                |  20% of 79.5 Mb'.
+
+# Created at 2023-12-13T11:52:30.044
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 79.5 Mb'.
+
+# Created at 2023-12-13T11:52:31.297
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 79.5 Mb'.
+
+# Created at 2023-12-13T11:52:32.791
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 79.5 Mb'.
+
+# Created at 2023-12-13T11:52:34.049
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 79.5 Mb'.
+
+# Created at 2023-12-13T11:52:35.506
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 79.5 Mb'.
+
+# Created at 2023-12-13T11:52:37.186
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 79.5 Mb'.
+
+# Created at 2023-12-13T11:52:38.955
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 79.5 Mb'.
+
+# Created at 2023-12-13T11:52:40.575
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 79.5 Mb'.
+
+# Created at 2023-12-13T11:52:40.576
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream 'Firefox 115.0 (playwright build v1422) downloaded to C:\Windows\system32\config\systemprofile\AppData\Local\ms-playwright\firefox-1422'.
+
+# Created at 2023-12-13T11:52:40.942
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream 'Downloading Webkit 17.0 (playwright build v1883)[2m from https://playwright.azureedge.net/builds/webkit/1883/webkit-win64.zip[22m'.
+
+# Created at 2023-12-13T11:52:41.667
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|                                                                                |   0% of 45.7 Mb'.
+
+# Created at 2023-12-13T11:52:42.713
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■                                                                        |  10% of 45.7 Mb'.
+
+# Created at 2023-12-13T11:52:43.817
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■                                                                |  20% of 45.7 Mb'.
+
+# Created at 2023-12-13T11:52:44.682
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 45.7 Mb'.
+
+# Created at 2023-12-13T11:52:45.567
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 45.7 Mb'.
+
+# Created at 2023-12-13T11:52:46.235
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 45.7 Mb'.
+
+# Created at 2023-12-13T11:52:47.066
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 45.7 Mb'.
+
+# Created at 2023-12-13T11:52:47.809
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 45.7 Mb'.
+
+# Created at 2023-12-13T11:52:48.566
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 45.7 Mb'.
+
+# Created at 2023-12-13T11:52:49.555
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 45.7 Mb'.
+
+# Created at 2023-12-13T11:52:51.629
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 45.7 Mb'.
+
+# Created at 2023-12-13T11:52:54.613
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream 'Webkit 17.0 (playwright build v1883) downloaded to C:\Windows\system32\config\systemprofile\AppData\Local\ms-playwright\webkit-1883'.
+

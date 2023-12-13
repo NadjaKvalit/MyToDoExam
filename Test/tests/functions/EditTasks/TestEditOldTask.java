@@ -8,6 +8,9 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.microsoft.playwright.APIResponse;
 import com.microsoft.playwright.Locator;
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.options.AriaRole;
+
 import testbase.TestBase;
 import todo_api.GETTaskByID;
 import pages.MainPage;
@@ -26,9 +29,11 @@ public class TestEditOldTask extends TestBase {
         Locator editButtonOfOldTask;
         Locator oldTaskListItem;
         Locator editInputOfOldTask;
+        Locator logo;
 
         // Interactions with elements and Assertions
         mainPage.openPage();
+        logo = page.getByRole(AriaRole.HEADING,new Page.GetByRoleOptions().setName("MyToDo"));
         idOfOldTaskListItem = mainPage.getTask1IdOfListItem();
         oldTaskListItem = mainPage.getTaskListItem(idOfOldTaskListItem);
         editButtonOfOldTask = oldTaskListItem.getByTestId("editButton");
@@ -37,7 +42,7 @@ public class TestEditOldTask extends TestBase {
         editInputOfOldTask = oldTaskListItem.getByTestId("editInput");
         editInputOfOldTask.fill(editNewToDo);
         
-        page.click("body"); // Click outside the input field
+        logo.click(); // Click outside the input field
 
         assertThat(oldTaskListItem).hasText(editNewToDo); // Assert the new edited task description is displayed
         // Assert that Editing mode is inactive
