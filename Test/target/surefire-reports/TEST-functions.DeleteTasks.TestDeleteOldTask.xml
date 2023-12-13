@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="functions.DeleteTasks.TestDeleteOldTask" time="4.219" tests="1" errors="1" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="functions.DeleteTasks.TestDeleteOldTask" time="8.064" tests="1" errors="0" skipped="0" failures="1">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -18,7 +18,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-11.0.16.1\bin"/>
-    <property name="sun.java.command" value="C:\Windows\Temp\surefire10022801519297578501\surefirebooter-20231213211118180_3.jar C:\Windows\Temp\surefire10022801519297578501 2023-12-13T21-11-17_846-jvmRun1 surefire-20231213211118180_1tmp surefire_0-20231213211118180_2tmp"/>
+    <property name="sun.java.command" value="C:\Windows\Temp\surefire12424378278035442720\surefirebooter-20231213222232376_3.jar C:\Windows\Temp\surefire12424378278035442720 2023-12-13T22-22-32_020-jvmRun1 surefire-20231213222232376_1tmp surefire_0-20231213222232376_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\FILES\LEARN\QA engineer\NACKADEMIN KVALIT22\Examensarbete (Exjobb)\PROJEKT TODO-LIST\PROJECT_TODO-LIST_Code\Test\target\test-classes;C:\FILES\LEARN\QA engineer\NACKADEMIN KVALIT22\Examensarbete (Exjobb)\PROJEKT TODO-LIST\PROJECT_TODO-LIST_Code\Test\target\classes;C:\Windows\system32\config\systemprofile\.m2\repository\com\microsoft\playwright\playwright\1.37.0\playwright-1.37.0.jar;C:\Windows\system32\config\systemprofile\.m2\repository\com\google\code\gson\gson\2.8.9\gson-2.8.9.jar;C:\Windows\system32\config\systemprofile\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Windows\system32\config\systemprofile\.m2\repository\com\microsoft\playwright\driver\1.37.0\driver-1.37.0.jar;C:\Windows\system32\config\systemprofile\.m2\repository\com\microsoft\playwright\driver-bundle\1.37.0\driver-bundle-1.37.0.jar;C:\Windows\system32\config\systemprofile\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.3\junit-jupiter-api-5.9.3.jar;C:\Windows\system32\config\systemprofile\.m2\repository\org\junit\platform\junit-platform-commons\1.9.3\junit-platform-commons-1.9.3.jar;C:\Windows\system32\config\systemprofile\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -34,7 +34,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Windows\Temp\surefire10022801519297578501\surefirebooter-20231213211118180_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Windows\Temp\surefire12424378278035442720\surefirebooter-20231213222232376_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.16.1+1-LTS-1"/>
@@ -61,34 +61,18 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="deleteOldTask" classname="functions.DeleteTasks.TestDeleteOldTask" time="3.196">
-    <error message="Error {&#10;  message=&apos;net::ERR_CONNECTION_REFUSED at http://127.0.0.1:5500&#10;=========================== logs ===========================&#10;navigating to &quot;127.0.0.1:5500&quot;, waiting until &quot;load&quot;&#10;============================================================&#10;  name=&apos;Error&#10;  stack=&apos;Error: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:5500&#10;=========================== logs ===========================&#10;navigating to &quot;127.0.0.1:5500&quot;, waiting until &quot;load&quot;&#10;============================================================&#10;    at FrameSession._navigate (C:\Windows\Temp\playwright-java-4927975293950143555\package\lib\server\chromium\crPage.js:508:35)&#10;    at async Frame._gotoAction (C:\Windows\Temp\playwright-java-4927975293950143555\package\lib\server\frames.js:533:28)&#10;}" type="com.microsoft.playwright.PlaywrightException"><![CDATA[com.microsoft.playwright.PlaywrightException: 
-Error {
-  message='net::ERR_CONNECTION_REFUSED at http://127.0.0.1:5500
-=========================== logs ===========================
-navigating to "127.0.0.1:5500", waiting until "load"
-============================================================
-  name='Error
-  stack='Error: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:5500
-=========================== logs ===========================
-navigating to "127.0.0.1:5500", waiting until "load"
-============================================================
-    at FrameSession._navigate (C:\Windows\Temp\playwright-java-4927975293950143555\package\lib\server\chromium\crPage.js:508:35)
-    at async Frame._gotoAction (C:\Windows\Temp\playwright-java-4927975293950143555\package\lib\server\frames.js:533:28)
-}
-	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
-	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:111)
-	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:126)
-	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:102)
-	at com.microsoft.playwright.impl.FrameImpl.navigateImpl(FrameImpl.java:463)
-	at com.microsoft.playwright.impl.PageImpl.lambda$navigate$45(PageImpl.java:836)
-	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
-	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:87)
-	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:836)
-	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:42)
-	at com.microsoft.playwright.Page.navigate(Page.java:5282)
-	at pagebase.PageBase.openPage(PageBase.java:22)
-	at functions.DeleteTasks.TestDeleteOldTask.deleteOldTask(TestDeleteOldTask.java:25)
+  <testcase name="deleteOldTask" classname="functions.DeleteTasks.TestDeleteOldTask" time="6.303">
+    <failure message="Locator expected to be visible&#10;Call log:&#10;Locator.expect with timeout 5000ms&#10;waiting for getByRole(AriaRole.LIST).locator(&quot;xpath=//li[@id=&apos;1701346042003&apos;]&quot;)" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: 
+Locator expected to be visible
+Call log:
+Locator.expect with timeout 5000ms
+waiting for getByRole(AriaRole.LIST).locator("xpath=//li[@id='1701346042003']")
+	at com.microsoft.playwright.impl.AssertionsBase.expectImpl(AssertionsBase.java:68)
+	at com.microsoft.playwright.impl.AssertionsBase.expectImpl(AssertionsBase.java:50)
+	at com.microsoft.playwright.impl.LocatorAssertionsImpl.expectTrue(LocatorAssertionsImpl.java:352)
+	at com.microsoft.playwright.impl.LocatorAssertionsImpl.isVisible(LocatorAssertionsImpl.java:347)
+	at com.microsoft.playwright.assertions.LocatorAssertions.isVisible(LocatorAssertions.java:672)
+	at functions.DeleteTasks.TestDeleteOldTask.deleteOldTask(TestDeleteOldTask.java:28)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -160,23 +144,6 @@ navigating to "127.0.0.1:5500", waiting until "load"
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-Caused by: com.microsoft.playwright.impl.DriverException: Error {
-  message='net::ERR_CONNECTION_REFUSED at http://127.0.0.1:5500
-=========================== logs ===========================
-navigating to "127.0.0.1:5500", waiting until "load"
-============================================================
-  name='Error
-  stack='Error: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:5500
-=========================== logs ===========================
-navigating to "127.0.0.1:5500", waiting until "load"
-============================================================
-    at FrameSession._navigate (C:\Windows\Temp\playwright-java-4927975293950143555\package\lib\server\chromium\crPage.js:508:35)
-    at async Frame._gotoAction (C:\Windows\Temp\playwright-java-4927975293950143555\package\lib\server\frames.js:533:28)
-}
-	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:226)
-	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:206)
-	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:109)
-	... 82 more
-]]></error>
+]]></failure>
   </testcase>
 </testsuite>

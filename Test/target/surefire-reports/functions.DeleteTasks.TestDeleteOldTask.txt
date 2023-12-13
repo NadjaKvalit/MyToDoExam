@@ -1,35 +1,19 @@
 -------------------------------------------------------------------------------
 Test set: functions.DeleteTasks.TestDeleteOldTask
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 4.219 s <<< FAILURE! - in functions.DeleteTasks.TestDeleteOldTask
-functions.DeleteTasks.TestDeleteOldTask.deleteOldTask  Time elapsed: 3.196 s  <<< ERROR!
-com.microsoft.playwright.PlaywrightException: 
-Error {
-  message='net::ERR_CONNECTION_REFUSED at http://127.0.0.1:5500
-=========================== logs ===========================
-navigating to "127.0.0.1:5500", waiting until "load"
-============================================================
-  name='Error
-  stack='Error: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:5500
-=========================== logs ===========================
-navigating to "127.0.0.1:5500", waiting until "load"
-============================================================
-    at FrameSession._navigate (C:\Windows\Temp\playwright-java-4927975293950143555\package\lib\server\chromium\crPage.js:508:35)
-    at async Frame._gotoAction (C:\Windows\Temp\playwright-java-4927975293950143555\package\lib\server\frames.js:533:28)
-}
-	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
-	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:111)
-	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:126)
-	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:102)
-	at com.microsoft.playwright.impl.FrameImpl.navigateImpl(FrameImpl.java:463)
-	at com.microsoft.playwright.impl.PageImpl.lambda$navigate$45(PageImpl.java:836)
-	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
-	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:87)
-	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:836)
-	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:42)
-	at com.microsoft.playwright.Page.navigate(Page.java:5282)
-	at pagebase.PageBase.openPage(PageBase.java:22)
-	at functions.DeleteTasks.TestDeleteOldTask.deleteOldTask(TestDeleteOldTask.java:25)
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 8.064 s <<< FAILURE! - in functions.DeleteTasks.TestDeleteOldTask
+functions.DeleteTasks.TestDeleteOldTask.deleteOldTask  Time elapsed: 6.303 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+Locator expected to be visible
+Call log:
+Locator.expect with timeout 5000ms
+waiting for getByRole(AriaRole.LIST).locator("xpath=//li[@id='1701346042003']")
+	at com.microsoft.playwright.impl.AssertionsBase.expectImpl(AssertionsBase.java:68)
+	at com.microsoft.playwright.impl.AssertionsBase.expectImpl(AssertionsBase.java:50)
+	at com.microsoft.playwright.impl.LocatorAssertionsImpl.expectTrue(LocatorAssertionsImpl.java:352)
+	at com.microsoft.playwright.impl.LocatorAssertionsImpl.isVisible(LocatorAssertionsImpl.java:347)
+	at com.microsoft.playwright.assertions.LocatorAssertions.isVisible(LocatorAssertions.java:672)
+	at functions.DeleteTasks.TestDeleteOldTask.deleteOldTask(TestDeleteOldTask.java:28)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -101,21 +85,4 @@ navigating to "127.0.0.1:5500", waiting until "load"
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-Caused by: com.microsoft.playwright.impl.DriverException: Error {
-  message='net::ERR_CONNECTION_REFUSED at http://127.0.0.1:5500
-=========================== logs ===========================
-navigating to "127.0.0.1:5500", waiting until "load"
-============================================================
-  name='Error
-  stack='Error: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:5500
-=========================== logs ===========================
-navigating to "127.0.0.1:5500", waiting until "load"
-============================================================
-    at FrameSession._navigate (C:\Windows\Temp\playwright-java-4927975293950143555\package\lib\server\chromium\crPage.js:508:35)
-    at async Frame._gotoAction (C:\Windows\Temp\playwright-java-4927975293950143555\package\lib\server\frames.js:533:28)
-}
-	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:226)
-	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:206)
-	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:109)
-	... 82 more
 
