@@ -1,7 +1,5 @@
 package todo_api;
 
-import com.microsoft.playwright.BrowserContext;
-
 public class TaskDetailsJSON {
 
 	public String idTasks;

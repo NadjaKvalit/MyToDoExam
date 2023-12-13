@@ -1,4 +1,3 @@
-functions\CompleteTasks\TestCompleteNewTask.class
 functions\TasksCategory\SetNewTaskCategory.class
 testbase\TestBase.class
 functions\DeleteTasks\DeleteNewTask.class

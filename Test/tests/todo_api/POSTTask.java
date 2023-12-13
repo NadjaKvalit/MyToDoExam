@@ -3,7 +3,6 @@ package todo_api;
 import com.microsoft.playwright.APIResponse;
 import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.options.RequestOptions;
-import todo_api.PUTTask;
 
 public class POSTTask {
     public String idTasks;
