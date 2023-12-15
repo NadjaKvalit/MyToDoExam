@@ -23,7 +23,7 @@ public class TestDisplayTasks extends TestBase {
         POSTTask postTask = new POSTTask();
         postTask.updateOrInsertTask("1701346042001", "Task 1", 1, 1, 4, context); // Update task with ID 1701346042001
         postTask.updateOrInsertTask("1701346042002", "Task 2", 2, 2, 1, context); // Update task with ID 1701346042002
-        postTask.updateOrInsertTask("1701346042003", "Task 3", 1, 6, 2, context); // Update task with ID 1701346042003
+        postTask.updateOrInsertTask("1701346042003", "Task 3", 2, 6, 2, context); // Update task with ID 1701346042003
         postTask.updateOrInsertTask("1701346042004", "Task 4", 1, 3, 1, context); // Update task with ID 1701346042004
         postTask.updateOrInsertTask("1701346042005", "Task 5", 2, 4, 3, context); // Update task with ID 1701346042005
         postTask.updateOrInsertTask("1701346042006", "Task 6", 1, 5, 3, context); // Update task with ID 1701346042006
