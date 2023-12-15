@@ -1,16 +1,16 @@
-package functions.Firefox.DeleteTasks;
+package functions.DeleteTasks;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 import org.junit.jupiter.api.Test;
 import com.microsoft.playwright.APIResponse;
 import com.microsoft.playwright.Locator;
-import testbase.TestBaseFirefox;
+import testbase.TestBase;
 import pages.MainPage;
 
-public class TestDeleteNewTaskFirefox extends TestBaseFirefox {
+public class TestDeleteNewTask extends TestBase {
     @Test
-    void deleteNewTaskFirefox() {
+    void deleteNewTaskChrome() {
         // Setup
         MainPage mainPage = new MainPage(page);
 
@@ -37,3 +37,4 @@ public class TestDeleteNewTaskFirefox extends TestBaseFirefox {
         assertEquals(apiResponse.status(), 404);
     }       
 }
+

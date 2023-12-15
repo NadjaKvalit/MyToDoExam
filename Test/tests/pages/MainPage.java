@@ -11,7 +11,7 @@ public class MainPage extends PageBase {
     };
 
     // Variables
-    String newToDo = "Task 4";
+    String newToDo = "Task 7";
     int doneIdOfNewTask = 2;
     int priorityBlockIdOfNewTask = 4;
     int categoryBlockIdOfNewTask = 6;
@@ -24,7 +24,7 @@ public class MainPage extends PageBase {
     String categoryName;
 
     // TESTDATA
-    int countTestDataTasks = 3;
+    int countTestDataTasks = 6;
     // Task 1
     String Task1IdOfListItem = "1701346042001";
     String Task1ToDo = "Task 1";
@@ -40,9 +40,27 @@ public class MainPage extends PageBase {
     // Task 3
     String Task3IdOfListItem = "1701346042003";
     String Task3ToDo = "Task 3";
-    int Task3DoneId = 1; // done status "completed"
+    int Task3DoneId = 2; // done status "uncompleted"
     int Task3CategoryBlockId = 6; // category "no category"
     int Task3PriorityBlockId = 2; // priority "medium"
+    // Task 4
+    String Task4IdOfListItem = "1701346042004";
+    String Task4ToDo = "Task 4";
+    int Task4DoneId = 1; // done status "completed"
+    int Task4CategoryBlockId = 3; // category "grocery"
+    int Task4PriorityBlockId = 1; // priority "high"
+        // Task 5
+    String Task5IdOfListItem = "1701346042005";
+    String Task5ToDo = "Task 5";
+    int Task5DoneId = 2; // done status "uncompleted"
+    int Task5CategoryBlockId = 4; // category "sport"
+    int Task5PriorityBlockId = 3; // priority "low"
+        // Task 6
+    String Task6IdOfListItem = "1701346042006";
+    String Task6ToDo = "Task 6";
+    int Task6DoneId = 1; // done status "completed"
+    int Task6CategoryBlockId = 5; // category "reminder"
+    int Task6PriorityBlockId = 3; // priority "low"
 
     // Locate elements
     Locator inputAddToDo;
@@ -161,6 +179,66 @@ public class MainPage extends PageBase {
 
     public int getTask3PriorityBlockId() {
         return Task3PriorityBlockId;
+    }
+
+public String getTask4IdOfListItem() {
+        return Task4IdOfListItem;
+    }
+
+    public String getTask4ToDo() {
+        return Task4ToDo;
+    }
+
+    public int getTask4DoneId() {
+        return Task4DoneId;
+    }
+
+    public int getTask4CategoryBlockId() {
+        return Task4CategoryBlockId;
+    }
+
+    public int getTask4PriorityBlockId() {
+        return Task4PriorityBlockId;
+    }
+
+public String getTask5IdOfListItem() {
+        return Task5IdOfListItem;
+    }
+
+    public String getTask5ToDo() {
+        return Task5ToDo;
+    }
+
+    public int getTask5DoneId() {
+        return Task5DoneId;
+    }
+
+    public int getTask5CategoryBlockId() {
+        return Task5CategoryBlockId;
+    }
+
+    public int getTask5PriorityBlockId() {
+        return Task5PriorityBlockId;
+    }
+
+public String getTask6IdOfListItem() {
+        return Task6IdOfListItem;
+    }
+
+    public String getTask6ToDo() {
+        return Task6ToDo;
+    }
+
+    public int getTask6DoneId() {
+        return Task6DoneId;
+    }
+
+    public int getTask6CategoryBlockId() {
+        return Task6CategoryBlockId;
+    }
+
+    public int getTask6PriorityBlockId() {
+        return Task6PriorityBlockId;
     }
 
     public int getCountTestDataTasks() {

@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: functions.TasksPriority.TestSetNewTaskPriority
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.453 s - in functions.TasksPriority.TestSetNewTaskPriority
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.478 s - in functions.TasksPriority.TestSetNewTaskPriority

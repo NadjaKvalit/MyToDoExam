@@ -1,4 +1,4 @@
-package functions.Chrome.CompleteTasks;
+package functions.CompleteTasks;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
@@ -8,13 +8,13 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.microsoft.playwright.APIResponse;
 import com.microsoft.playwright.Locator;
-import testbase.TestBaseChrome;
+import testbase.TestBase;
 import todo_api.GETTaskByID;
 import pages.MainPage;
 
-public class TestCompleteNewTaskChrome extends TestBaseChrome {
+public class TestUncompleteNewTask extends TestBase {
     @Test
-    void completeNewTaskChrome() {
+    void uncompleteNewTaskChrome() {
         // Setup
         MainPage mainPage = new MainPage(page);
 
@@ -33,11 +33,12 @@ public class TestCompleteNewTaskChrome extends TestBaseChrome {
         newTaskListItem = mainPage.getTaskListItem(idOfNewTaskListItem);
         doneOfNewTask = newTaskListItem.getByTestId("done_status");
         doneOfNewTask.check();
-        assertThat(doneOfNewTask).isChecked(); // Assert done status is completed, The checkbox is checked.
-        //Done-status for the task is updated into doneID = 1.
-        assertThat(doneOfNewTask).hasId(String.valueOf((mainPage.getDoneStatusIdOfCompletedTask())));
+        doneOfNewTask.uncheck();
+        assertThat(doneOfNewTask).not().isChecked(); // Assert done status is uncompleted, The checkbox is not checked.
+        //Done-status for the task is updated into doneID = 2.
+        assertThat(doneOfNewTask).hasId(String.valueOf((mainPage.getDoneStatusIdOfUncompletedTask())));
         
-        assertThat(newTaskListItem.locator(".toDoTextBlock")).hasCSS("text-decoration", Pattern.compile(".*line-through.*"));
+        assertThat(newTaskListItem.locator(".toDoTextBlock")).not().hasCSS("text-decoration", Pattern.compile(".*line-through.*"));
         
         // API test, GET - method. Get the new created task fron db
         APIResponse apiResponse = page.request().get("http://localhost:3000/tasks/" + idOfNewTaskListItem);
@@ -51,7 +52,7 @@ public class TestCompleteNewTaskChrome extends TestBaseChrome {
         GETTaskByID getTaskByIDResponse = gson.fromJson(apiResponse.text(), GETTaskByID.class);
 
         // Verify that test data from DB in response is correct
-        assertEquals(getTaskByIDResponse.getDone_idDone(), mainPage.getDoneStatusIdOfCompletedTask()); //Done-status for the task is updated in the database into doneID = 1.
+        assertEquals(getTaskByIDResponse.getDone_idDone(), mainPage.getDoneStatusIdOfUncompletedTask()); //Done-status for the task is updated in the database into doneID = 1.
         assertThat(apiResponse).isOK(); // Response status is OK
 
         deleteButtonOfNewTask = newTaskListItem.getByTestId("deleteButton");
