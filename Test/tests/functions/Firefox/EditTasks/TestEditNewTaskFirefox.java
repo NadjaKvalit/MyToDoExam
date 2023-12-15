@@ -1,4 +1,4 @@
-package functions.EditTasks;
+package functions.Firefox.EditTasks;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -11,13 +11,13 @@ import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
 
-import testbase.TestBase;
+import testbase.TestBaseFirefox;
 import todo_api.GETTaskByID;
 import pages.MainPage;
 
-public class TestEditNewTask extends TestBase {
+public class TestEditNewTaskFirefox extends TestBaseFirefox {
     @Test
-    void editNewTask() {
+    void editNewTaskFirefox() {
         // Setup
         MainPage mainPage = new MainPage(page);
 

@@ -1,18 +1,18 @@
-package functions;
+package functions.Chrome;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 import org.junit.jupiter.api.Test;
 
 import com.microsoft.playwright.Locator;
-import testbase.TestBase;
+import testbase.TestBaseChrome;
 import todo_api.POSTTask;
 import pages.MainPage;
 
-public class TestDisplayTasks extends TestBase {
+public class TestDisplayTasksChrome extends TestBaseChrome {
 
     @Test
-    void displayTasks() {
+    void displayTasksChrome() {
         // Setup
         MainPage mainPage = new MainPage(page);
 

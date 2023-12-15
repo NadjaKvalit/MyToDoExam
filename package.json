@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Exam Project \"My To-Do List\" development with testing",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "playwright test"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/NadjaKvalit/MyToDoExam.git"
@@ -20,4 +22,5 @@
     "@playwright/test": "^1.40.1",
     "@types/node": "^20.10.3"
   }
+  
 }

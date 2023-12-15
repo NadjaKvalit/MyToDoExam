@@ -1,53 +1,51 @@
-package functions.EditTasks;
+package functions.Firefox.TasksPriority;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 import org.junit.jupiter.api.Test;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.microsoft.playwright.APIResponse;
 import com.microsoft.playwright.Locator;
-import com.microsoft.playwright.Page;
-import com.microsoft.playwright.options.AriaRole;
-
-import testbase.TestBase;
+import testbase.TestBaseFirefox;
 import todo_api.GETTaskByID;
 import pages.MainPage;
 
-public class TestEditOldTask extends TestBase {
+public class TestUpdateOldTaskPriorityFirefox extends TestBaseFirefox {
+    
     @Test
-    void editOldTask() {
+    void updateOldTaskPriorityFirefox() {
         // Setup
         MainPage mainPage = new MainPage(page);
 
         // Variables
         String idOfOldTaskListItem;
-        String editNewToDo = "Task 5";
+        String newPriority = "medium";
+        int newPriorityIdOfOldTask = mainPage.getPriorityId(newPriority);
         
         // Locators
-        Locator editButtonOfOldTask;
+        Locator priorityButtonOfOldTask;
         Locator oldTaskListItem;
-        Locator editInputOfOldTask;
-        Locator logo;
+        Locator selectPriorityIcon;
+        Locator priorityModal;
+        Locator selectedPriorityIcon;
 
         // Interactions with elements and Assertions
         mainPage.openPage();
-        logo = page.getByRole(AriaRole.HEADING,new Page.GetByRoleOptions().setName("MyToDo"));
         idOfOldTaskListItem = mainPage.getTask1IdOfListItem();
         oldTaskListItem = mainPage.getTaskListItem(idOfOldTaskListItem);
-        editButtonOfOldTask = oldTaskListItem.getByTestId("editButton");
-        editButtonOfOldTask.click();
 
-        editInputOfOldTask = oldTaskListItem.getByTestId("editInput");
-        editInputOfOldTask.fill(editNewToDo);
-        
-        logo.click(); // Click outside the input field
+        priorityButtonOfOldTask = oldTaskListItem.getByTestId("priority");
+        priorityButtonOfOldTask.click();
+        priorityModal = page.getByTestId("priority_modal");
 
-        assertThat(oldTaskListItem).hasText(editNewToDo); // Assert the new edited task description is displayed
-        // Assert that Editing mode is inactive
-        assertTrue(oldTaskListItem.getByTestId("task_text").getAttribute("contenteditable") == null);
-        
+        selectPriorityIcon = priorityModal.getByAltText(newPriority);
+        selectPriorityIcon.click();
+
+        selectedPriorityIcon = priorityButtonOfOldTask.locator("img");
+        assertThat(selectedPriorityIcon).hasAttribute("alt", newPriority);
+        assertThat(priorityButtonOfOldTask).hasId(Integer.toString(mainPage.getPriorityId(newPriority)));
+
         // API test, GET - method. Get the new created task fron db
         APIResponse apiResponse = page.request().get("http://localhost:3000/tasks/" + idOfOldTaskListItem);
 
@@ -60,9 +58,10 @@ public class TestEditOldTask extends TestBase {
         GETTaskByID getTaskByIDResponse = gson.fromJson(apiResponse.text(), GETTaskByID.class);
 
         // Verify that test data from DB in response is correct
-        assertEquals(getTaskByIDResponse.getWhatToDo(), editNewToDo); //Assert Task description for the task is updated in the database.
-        assertThat(apiResponse).isOK(); // Response status is OK
-    }   
-}
+        assertEquals(getTaskByIDResponse.getIdTasks(), idOfOldTaskListItem);
+        assertEquals(getTaskByIDResponse.getPriority_idPriority(), newPriorityIdOfOldTask);
 
+        assertThat(apiResponse).isOK(); // Response status is OK
+    }
+}
 

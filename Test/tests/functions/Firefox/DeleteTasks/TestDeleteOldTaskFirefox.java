@@ -1,16 +1,16 @@
-package functions.DeleteTasks;
+package functions.Firefox.DeleteTasks;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 import org.junit.jupiter.api.Test;
 import com.microsoft.playwright.APIResponse;
 import com.microsoft.playwright.Locator;
-import testbase.TestBase;
+import testbase.TestBaseFirefox;
 import pages.MainPage;
 
-public class TestDeleteOldTask extends TestBase {
+public class TestDeleteOldTaskFirefox extends TestBaseFirefox {
     @Test
-    void deleteOldTask() {
+    void deleteOldTaskFirefox() {
         // Setup
         MainPage mainPage = new MainPage(page);
 

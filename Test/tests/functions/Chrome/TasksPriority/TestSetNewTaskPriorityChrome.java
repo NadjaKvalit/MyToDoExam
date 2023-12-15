@@ -1,4 +1,4 @@
-package functions.TasksCategory;
+package functions.Chrome.TasksPriority;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.HashSet;
@@ -10,31 +10,32 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.microsoft.playwright.APIResponse;
 import com.microsoft.playwright.Locator;
-import testbase.TestBase;
+import testbase.TestBaseChrome;
 import todo_api.GETTaskByID;
 import pages.MainPage;
 
-public class TestSetNewTaskCategory extends TestBase {
+public class TestSetNewTaskPriorityChrome extends TestBaseChrome {
+    
     @Test
-    void setNewTaskCategory() {
+    void setNewTaskPriorityChrome() {
         // Setup
         MainPage mainPage = new MainPage(page);
 
         // Variables
         String idOfNewTaskListItem;
-        String newCategory = "work";
-        int newCategoryIdOfNewTask = mainPage.getCategoryId(newCategory);
-        Set<String> expectedAltAttributesInModal = Set.of("work", "study", "grocery", "sport", "other");
+        String newPriority = "low";
+        int newPriorityIdOfNewTask = mainPage.getPriorityId(newPriority);
+        Set<String> expectedAltAttributesInModal = Set.of("high", "medium", "low");
         Set<String> actualAltAttributesInModal = new HashSet<>();
 
         // Locators
         Locator deleteButtonOfNewTask;
-        Locator categoryButtonOfNewTask;
+        Locator priorityButtonOfNewTask;
         Locator newTaskListItem;
-        Locator selectCategoryIcon;
-        Locator categoryModal;
-        List<Locator> imagesInCategoryModal;
-        Locator selectedCategoryIcon;
+        Locator selectPriorityIcon;
+        Locator priorityModal;
+        List<Locator> imagesInPriorityModal;
+        Locator selectedPriorityIcon;
 
         // Interactions with elements and Assertions
         mainPage.openPage();
@@ -42,27 +43,27 @@ public class TestSetNewTaskCategory extends TestBase {
         idOfNewTaskListItem = mainPage.getiIdOfNewTaskListItem();
         newTaskListItem = mainPage.getTaskListItem(idOfNewTaskListItem);
 
-        categoryButtonOfNewTask = newTaskListItem.getByTestId("category");
-        categoryButtonOfNewTask.click();
-        categoryModal = page.getByTestId("category_modal");
+        priorityButtonOfNewTask = newTaskListItem.getByTestId("priority");
+        priorityButtonOfNewTask.click();
+        priorityModal = page.getByTestId("priority_modal");
 
-        assertThat(categoryModal).isVisible(); // A modal displaying a list of category icons is popped up.
-        imagesInCategoryModal = categoryModal.locator("img").all();
-        for (Locator image : imagesInCategoryModal) {
+        assertThat(priorityModal).isVisible(); // A modal displaying a list of category icons is popped up.
+        imagesInPriorityModal = priorityModal.locator("img").all();
+        for (Locator image : imagesInPriorityModal) {
             String alt = image.getAttribute("alt");
             actualAltAttributesInModal.add(alt);
         }
 
         // Assert that The list of category in the modal contains 5 names:
-        assertEquals(5, imagesInCategoryModal.size());
+        assertEquals(3, imagesInPriorityModal.size());
         assertEquals(expectedAltAttributesInModal, actualAltAttributesInModal);
 
-        selectCategoryIcon = categoryModal.getByAltText(newCategory);
-        selectCategoryIcon.click();
+        selectPriorityIcon = priorityModal.getByAltText(newPriority);
+        selectPriorityIcon.click();
 
-        selectedCategoryIcon = categoryButtonOfNewTask.locator("img");
-        assertThat(selectedCategoryIcon).hasAttribute("alt", newCategory);
-        assertThat(categoryButtonOfNewTask).hasId(Integer.toString(mainPage.getCategoryId(newCategory)));
+        selectedPriorityIcon = priorityButtonOfNewTask.locator("img");
+        assertThat(selectedPriorityIcon).hasAttribute("alt", newPriority);
+        assertThat(priorityButtonOfNewTask).hasId(Integer.toString(mainPage.getPriorityId(newPriority)));
 
         // API test, GET - method. Get the new created task fron db
         APIResponse apiResponse = page.request().get("http://localhost:3000/tasks/" + idOfNewTaskListItem);
@@ -77,7 +78,7 @@ public class TestSetNewTaskCategory extends TestBase {
 
         // Verify that test data from DB in response is correct
         assertEquals(getTaskByIDResponse.getIdTasks(), idOfNewTaskListItem);
-        assertEquals(getTaskByIDResponse.getCategory_idCategory(), newCategoryIdOfNewTask);
+        assertEquals(getTaskByIDResponse.getPriority_idPriority(), newPriorityIdOfNewTask);
 
         assertThat(apiResponse).isOK(); // Response status is OK
 

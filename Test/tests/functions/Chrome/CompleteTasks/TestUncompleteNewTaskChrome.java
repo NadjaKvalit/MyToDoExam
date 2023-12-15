@@ -1,4 +1,4 @@
-package functions.CompleteTasks;
+package functions.Chrome.CompleteTasks;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
@@ -8,13 +8,13 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.microsoft.playwright.APIResponse;
 import com.microsoft.playwright.Locator;
-import testbase.TestBase;
+import testbase.TestBaseChrome;
 import todo_api.GETTaskByID;
 import pages.MainPage;
 
-public class TestUncompleteNewTask extends TestBase {
+public class TestUncompleteNewTaskChrome extends TestBaseChrome {
     @Test
-    void uncompleteNewTask() {
+    void uncompleteNewTaskChrome() {
         // Setup
         MainPage mainPage = new MainPage(page);
 

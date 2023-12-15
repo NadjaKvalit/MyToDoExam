@@ -1,32 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-  <groupId>PROJECT_TODO-LIST_Code</groupId>
-  <artifactId>PROJECT_TODO-LIST_Code</artifactId>
-  <version>0.1-SNAPSHOT</version>
-  
-  <name>PROJECT_TODO-LIST_Code</name>      
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-            <maven.compiler.source>1.8</maven.compiler.source>
+    <groupId>PROJECT_TODO-LIST_Code</groupId>
+    <artifactId>PROJECT_TODO-LIST_Code</artifactId>
+    <version>0.1-SNAPSHOT</version>
+    <name>PROJECT_TODO-LIST_Code</name>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-  </properties>
-  <dependencies>
-    <dependency>
-      <groupId>com.microsoft.playwright</groupId>
-      <artifactId>playwright</artifactId>
-      <version>1.37.0</version>
-    </dependency>
-    	<dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-api</artifactId>
-      <version>5.9.3</version>
-      <!--scope>test</scope-->
-    </dependency>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.microsoft.playwright</groupId>
+            <artifactId>playwright</artifactId>
+            <version>1.37.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.9.3</version>
+            <!--scope>test</scope-->
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>5.9.3</version> <!-- Replace with the appropriate version -->
+            <scope>test</scope>
+        </dependency>
     </dependencies>
-<build>
+    <build>
         <sourceDirectory>tests</sourceDirectory>
         <testSourceDirectory>tests</testSourceDirectory>
         <resources>
@@ -41,7 +46,9 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.10.1</version>
-                <!-- References to interface static methods are allowed only at source level 1.8 or above -->
+                
+                <!-- References to interface static methods are allowed only at source level 1.8 or
+                above -->
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
@@ -56,4 +63,5 @@
         </plugins>
         <!-- Other build configurations -->
     </build>
+
 </project>

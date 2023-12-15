@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: functions.TestDisplayTasks
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.445 s - in functions.TestDisplayTasks
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.312 s - in functions.TestDisplayTasks

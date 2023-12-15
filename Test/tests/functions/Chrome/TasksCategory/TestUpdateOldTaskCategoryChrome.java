@@ -1,4 +1,4 @@
-package functions.TasksPriority;
+package functions.Chrome.TasksCategory;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
@@ -7,44 +7,43 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.microsoft.playwright.APIResponse;
 import com.microsoft.playwright.Locator;
-import testbase.TestBase;
+import testbase.TestBaseChrome;
 import todo_api.GETTaskByID;
 import pages.MainPage;
 
-public class TestUpdateOldTaskPriority extends TestBase {
-    
+public class TestUpdateOldTaskCategoryChrome extends TestBaseChrome {
     @Test
-    void updateOldTaskPriorityy() {
+    void setNewTaskCategoryChrome() {
         // Setup
         MainPage mainPage = new MainPage(page);
 
         // Variables
         String idOfOldTaskListItem;
-        String newPriority = "medium";
-        int newPriorityIdOfOldTask = mainPage.getPriorityId(newPriority);
-        
+        String newCategory = "sport";
+        int newCategoryIdOfOldTask = mainPage.getCategoryId(newCategory);
+
         // Locators
-        Locator priorityButtonOfOldTask;
+        Locator categoryButtonOfOldTask;
         Locator oldTaskListItem;
-        Locator selectPriorityIcon;
-        Locator priorityModal;
-        Locator selectedPriorityIcon;
+        Locator selectCategoryIcon;
+        Locator categoryModal;
+        Locator selectedCategoryIcon;
 
         // Interactions with elements and Assertions
         mainPage.openPage();
-        idOfOldTaskListItem = mainPage.getTask1IdOfListItem();
+        idOfOldTaskListItem = mainPage.getTask2IdOfListItem();
         oldTaskListItem = mainPage.getTaskListItem(idOfOldTaskListItem);
 
-        priorityButtonOfOldTask = oldTaskListItem.getByTestId("priority");
-        priorityButtonOfOldTask.click();
-        priorityModal = page.getByTestId("priority_modal");
+        categoryButtonOfOldTask = oldTaskListItem.getByTestId("category");
+        categoryButtonOfOldTask.click();
+        categoryModal = page.getByTestId("category_modal");
 
-        selectPriorityIcon = priorityModal.getByAltText(newPriority);
-        selectPriorityIcon.click();
+        selectCategoryIcon = categoryModal.getByAltText(newCategory);
+        selectCategoryIcon.click();
 
-        selectedPriorityIcon = priorityButtonOfOldTask.locator("img");
-        assertThat(selectedPriorityIcon).hasAttribute("alt", newPriority);
-        assertThat(priorityButtonOfOldTask).hasId(Integer.toString(mainPage.getPriorityId(newPriority)));
+        selectedCategoryIcon = categoryButtonOfOldTask.locator("img");
+        assertThat(selectedCategoryIcon).hasAttribute("alt", newCategory);
+        assertThat(categoryButtonOfOldTask).hasId(Integer.toString(mainPage.getCategoryId(newCategory)));
 
         // API test, GET - method. Get the new created task fron db
         APIResponse apiResponse = page.request().get("http://localhost:3000/tasks/" + idOfOldTaskListItem);
@@ -59,9 +58,8 @@ public class TestUpdateOldTaskPriority extends TestBase {
 
         // Verify that test data from DB in response is correct
         assertEquals(getTaskByIDResponse.getIdTasks(), idOfOldTaskListItem);
-        assertEquals(getTaskByIDResponse.getPriority_idPriority(), newPriorityIdOfOldTask);
+        assertEquals(getTaskByIDResponse.getCategory_idCategory(), newCategoryIdOfOldTask);
 
         assertThat(apiResponse).isOK(); // Response status is OK
     }
 }
-

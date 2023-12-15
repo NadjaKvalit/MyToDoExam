@@ -7,7 +7,7 @@ import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 
-public class TestBase {
+public class TestBaseFirefox {
     // Shared between all tests in this class and subclasses.
     protected static Playwright playwright;
     protected static Browser browser;
@@ -19,7 +19,7 @@ public class TestBase {
     @BeforeAll
     static void launchBrowser() {
         playwright = Playwright.create();
-        browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(1000));
+        browser = playwright.firefox().launch(new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(1000));
     }
 
     @AfterAll

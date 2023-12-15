@@ -1,4 +1,4 @@
-package functions.CompleteTasks;
+package functions.Firefox.CompleteTasks;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
@@ -8,13 +8,13 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.microsoft.playwright.APIResponse;
 import com.microsoft.playwright.Locator;
-import testbase.TestBase;
+import testbase.TestBaseFirefox;
 import todo_api.GETTaskByID;
 import pages.MainPage;
 
-public class TestCompleteOldTask extends TestBase {
+public class TestCompleteOldTaskFirefox extends TestBaseFirefox {
     @Test
-    void completeOldTask() {
+    void completeOldTaskFirefox() {
         // Setup
         MainPage mainPage = new MainPage(page);
 
