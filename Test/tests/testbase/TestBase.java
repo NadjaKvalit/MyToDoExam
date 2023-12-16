@@ -60,13 +60,6 @@ public class TestBase {
         }
     }
 
-    @AfterEach
-    void closeContext() {
-        if (context != null) {
-            context.close();
-        }
-    }
-
     @Test
     @DisplayName("YourTestName")
     void yourTest() {
@@ -74,4 +67,13 @@ public class TestBase {
         System.out.println("Running test: YourTestName - " + browserName);
         // Your test code
     }
+
+    @AfterEach
+    void closeContext() {
+        if (context != null) {
+            context.close();
+        }
+    }
+
+    
 }
