@@ -32,9 +32,11 @@ public class TestBase {
                 if (browserName.equals("chromium")) {
                     browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(true).setSlowMo(1000));
                     System.out.println("Running tests on browser: " + browserName);
+                    
                 } else if (browserName.equals("firefox")) {
                     browser = playwright.firefox().launch(new BrowserType.LaunchOptions().setHeadless(true).setSlowMo(1000));
                     System.out.println("Running tests on browser: " + browserName);
+                    
                 }
             }
             if (browser != null) {
@@ -58,14 +60,6 @@ public class TestBase {
             context = browser.newContext();
             page = context.newPage();
         }
-    }
-
-    @Test
-    @DisplayName("YourTestName")
-    void yourTest() {
-        String browserName = System.getProperty("browser");
-        System.out.println("Running test: YourTestName - " + browserName);
-        // Your test code
     }
 
     @AfterEach

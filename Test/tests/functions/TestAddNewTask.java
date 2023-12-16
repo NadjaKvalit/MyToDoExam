@@ -1,6 +1,9 @@
 package functions;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.DisplayName;
+
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 import org.junit.jupiter.api.Test;
 import com.google.gson.Gson;
@@ -35,6 +38,8 @@ public class TestAddNewTask extends TestBase {
     Locator deleteButtonOfNewTask;
 
     // Interactions with elements and Assertions
+    String browserName = System.getProperty("browser");
+    System.out.println("Running test: Your Test Name - " + browserName);
     mainPage.openPage();
     inputAddToDo = mainPage.getInputAddToDo();
     inputAddToDo.click();
