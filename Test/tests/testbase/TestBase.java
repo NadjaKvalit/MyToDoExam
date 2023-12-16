@@ -66,4 +66,12 @@ public class TestBase {
             context.close();
         }
     }
+
+    @Test
+    @DisplayName("YourTestName")
+    void yourTest() {
+        String browserName = System.getProperty("browser");
+        System.out.println("Running test: YourTestName - " + browserName);
+        // Your test code
+    }
 }
