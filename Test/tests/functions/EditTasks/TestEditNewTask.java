@@ -17,7 +17,7 @@ import pages.MainPage;
 
 public class TestEditNewTask extends TestBase {
     @Test
-    void editNewTaskChrome() {
+    void editNewTask() {
         // Setup
         MainPage mainPage = new MainPage(page);
 

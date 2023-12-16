@@ -16,7 +16,7 @@ import pages.MainPage;
 
 public class TestSetNewTaskCategory extends TestBase {
     @Test
-    void setNewTaskCategoryChrome() {
+    void setNewTaskCategory() {
         // Setup
         MainPage mainPage = new MainPage(page);
 

@@ -12,7 +12,7 @@ import pages.MainPage;
 public class TestDisplayTasks extends TestBase {
 
     @Test
-    void displayTasksChrome() {
+    void displayTasks() {
         // Setup
         MainPage mainPage = new MainPage(page);
 

@@ -10,7 +10,7 @@ import pages.MainPage;
 
 public class TestDeleteNewTask extends TestBase {
     @Test
-    void deleteNewTaskChrome() {
+    void deleteNewTask() {
         // Setup
         MainPage mainPage = new MainPage(page);
 

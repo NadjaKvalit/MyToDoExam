@@ -27,11 +27,14 @@ public class TestBase {
             String browserName = System.getProperty("browser");
             if (browserName == null) {
                 browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(1000));
+                System.out.println("Running tests on browser: " + browser);
             } else {
                 if (browserName.equals("chromium")) {
                     browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(1000));
+                    System.out.println("Running tests on browser: " + browser);
                 } else if (browserName.equals("firefox")) {
                     browser = playwright.firefox().launch(new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(1000));
+                    System.out.println("Running tests on browser: " + browser);
                 }
             }
             if (browser != null) {

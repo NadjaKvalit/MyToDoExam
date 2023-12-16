@@ -14,7 +14,7 @@ import pages.MainPage;
 
 public class TestCompleteNewTask extends TestBase {
     @Test
-    void completeNewTaskChrome() {
+    void completeNewTask() {
         // Setup
         MainPage mainPage = new MainPage(page);
 

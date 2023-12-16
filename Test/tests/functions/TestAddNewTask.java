@@ -14,12 +14,12 @@ import pages.MainPage;
 public class TestAddNewTask extends TestBase {
 
   @Test
-  void addNewTaskChrome() {
+  void addNewTask() {
     // Setup
     MainPage mainPage = new MainPage(page);
 
     // Variables
-    String newToDo = "Task 4";
+    String newToDo = mainPage.getNewToDo();
     String backgroundColorOfFocusedInput = "rgb(235, 255, 232)";
     int doneIdOfNewTask = mainPage.getDoneIdOfNewTask();
     int priorityBlockIdOfNewTask = mainPage.getPriorityBlockIdOfNewTask();
