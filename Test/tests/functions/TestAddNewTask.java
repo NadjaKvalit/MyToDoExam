@@ -1,9 +1,6 @@
 package functions;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import org.junit.jupiter.api.DisplayName;
-
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 import org.junit.jupiter.api.Test;
 import com.google.gson.Gson;

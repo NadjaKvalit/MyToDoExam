@@ -28,7 +28,8 @@ db.connect((err) => {
 //(req, res) är "request" och "response". De är faktiskt parametrar för funktion. "Request" är allt som en användare skickar till servern
 //"Response" är tvärtom, dvs alltning som skickas/svaras från servern till klienten (till webbläsaren)
 const postTask = (req, res) => {
-  const whatToDo = req.body.whatToDo;
+  const idTasks =  Date.now().toString();
+  const whatToDo = req.body.whatToDo;  
   /*
   const Done_idDone = 2;
   const Category_idCategory = 6;
@@ -36,7 +37,8 @@ const postTask = (req, res) => {
   const Done_idDone = req.body.Done_idDone;
   const Category_idCategory = req.body.Category_idCategory;
   const Priority_idPriority = req.body.Priority_idPriority;
-  const idTasks = req.body.idTasks;
+  //const idTasks = req.body.idTasks;
+  //const insertTaskQuery = `INSERT INTO tasks (idTasks, whatToDo, Done_idDone, Category_idCategory, Priority_idPriority) VALUES (?, ?, ?, ?, ?)`;
   const insertTaskQuery = `INSERT INTO tasks (idTasks, whatToDo, Done_idDone, Category_idCategory, Priority_idPriority) VALUES (?, ?, ?, ?, ?)`;
   db.query(
     insertTaskQuery,
@@ -45,7 +47,7 @@ const postTask = (req, res) => {
       if (err) {
         res.status(500).send(err);
       } else {
-        res.status(201).json({
+        res.status(200).json({
           idTasks,
           whatToDo,
           Done_idDone,
@@ -87,19 +89,25 @@ const getTaskById = (req, res) => {
 
 // Update task by ID (PUT request)
 const putTaskById = (req, res) => {
-  const taskId = req.params.id;
+  const idTasks = req.params.id;
   const { whatToDo, Done_idDone, Category_idCategory, Priority_idPriority } = req.body;
   
   const updateTaskQuery = `UPDATE tasks SET whatToDo=?, Done_idDone=?, Category_idCategory=?, Priority_idPriority=? WHERE idTasks=?`;
   
   db.query(
     updateTaskQuery,
-    [whatToDo, Done_idDone, Category_idCategory, Priority_idPriority, taskId],
+    [whatToDo, Done_idDone, Category_idCategory, Priority_idPriority, idTasks],
     (err, result) => {
       if (err) {
         res.status(500).send(err);
       } else {
-        res.status(200).send(`Task with ID ${taskId} has been updated`);
+        res.status(200).json({
+          idTasks,
+          whatToDo,
+          Done_idDone,
+          Category_idCategory,
+          Priority_idPriority,
+        });
       }
     }
   );
@@ -107,25 +115,28 @@ const putTaskById = (req, res) => {
 
 // Delete task by ID (DELETE request)
 const deleteTaskById = (req, res) => {
-  const taskId = req.params.id;
+  const idTasks = req.params.id;
   const deleteTaskQuery = `DELETE FROM tasks WHERE idTasks=?`;
 
-  db.query(deleteTaskQuery, [taskId], (err, result) => {
+  db.query(deleteTaskQuery, [idTasks], (err, result) => {
     if (err) {
       res.status(500).send(err);
     } else {
-      res.status(200).send(`Task with ID ${taskId} has been deleted`);
+      res.json({message: `Task with ID ${idTasks} has been deleted` })
     }
   });
 };
 
-////här behandlar vi en "route" "/" (dvs, http://localhost:3000/carts/
-//URL basadress http://localhost:3000/carts definierades i app.js när vi tillagt "carts routers" till vår app. (app.use('/carts', carts) )
+
+
+
+////här behandlar vi en "route" "/" (dvs, http://localhost:3000/tasks/
+//URL basadress http://localhost:3000/tasks definierades i app.js när vi tillagt "tasks routers" till vår app. (app.use('/tasks', tasks) )
 router.route("/")
 .post(postTask)
 .get(getTasks);
 
-//här behandlar vi en "route" med "/:id" "endpoint" (dvs,  http://localhost:3000/products/:id)
+//här behandlar vi en "route" med "/:id" "endpoint" (dvs,  http://localhost:3000/tasks/:id)
 router.route('/:id')
 .get(getTaskById)
 .put(putTaskById)
