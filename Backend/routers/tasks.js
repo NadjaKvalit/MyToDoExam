@@ -28,7 +28,8 @@ db.connect((err) => {
 //(req, res) är "request" och "response". De är faktiskt parametrar för funktion. "Request" är allt som en användare skickar till servern
 //"Response" är tvärtom, dvs alltning som skickas/svaras från servern till klienten (till webbläsaren)
 const postTask = (req, res) => {
-  const idTasks =  Date.now().toString();
+  let idTasks;
+  if (req.body.idTasks==0) {idTasks=Date.now().toString()}else{idTasks=req.body.idTasks};
   const whatToDo = req.body.whatToDo;  
   /*
   const Done_idDone = 2;
@@ -79,7 +80,7 @@ const getTaskById = (req, res) => {
       res.status(500).send(err);
     } else {
       if (result.length === 0) {
-        res.status(404).send(`Task with ID ${taskId} not found`);
+        res.status(404).json({ message: `Task with ID ${taskId} not found` });
       } else {
         res.status(200).json(result[0]);
       }
