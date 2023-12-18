@@ -29,7 +29,11 @@ db.connect((err) => {
 //"Response" är tvärtom, dvs alltning som skickas/svaras från servern till klienten (till webbläsaren)
 const postTask = (req, res) => {
   let idTasks;
-  if (req.body.idTasks==0) {idTasks=Date.now().toString()}else{idTasks=req.body.idTasks};
+  if ('idTasks' in req.body && req.body.idTasks !== null && req.body.idTasks !== undefined && req.body.idTasks !== '') {
+    idTasks = req.body.idTasks;
+  } else {
+    idTasks = Date.now().toString();
+  }
   const whatToDo = req.body.whatToDo;  
   /*
   const Done_idDone = 2;
