@@ -32,7 +32,6 @@ public class POSTTask {
             BrowserContext context) {
 
         APIResponse apiResponse = context.request().get("http://localhost:3000/tasks/" + idTasks);
-
         int statusCode = apiResponse.status();
 
         if (statusCode == 404) {

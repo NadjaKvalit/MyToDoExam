@@ -488,9 +488,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const taskData = {
         idTasks: taskToDoBlock.id,
         whatToDo: taskText,
-        Done_idDone: 2,
+        /*Done_idDone: 2,
   Category_idCategory: 6,
-  Priority_idPriority: 4,
+  Priority_idPriority: 4,*/
       };
       fetch("http://localhost:3000/tasks/", {
         method: "POST",

@@ -28,22 +28,35 @@ db.connect((err) => {
 //(req, res) är "request" och "response". De är faktiskt parametrar för funktion. "Request" är allt som en användare skickar till servern
 //"Response" är tvärtom, dvs alltning som skickas/svaras från servern till klienten (till webbläsaren)
 const postTask = (req, res) => {
+  //const { whatToDo, Done_idDone, Category_idCategory, Priority_idPriority } = req.body;
+  const whatToDo = req.body.whatToDo;
+  if (!whatToDo) {
+    return res.status(400).json({ error: 'Some required fields are missing or empty' });
+  }  
   let idTasks;
   if ('idTasks' in req.body && req.body.idTasks !== null && req.body.idTasks !== undefined && req.body.idTasks !== '') {
     idTasks = req.body.idTasks;
   } else {
     idTasks = Date.now().toString();
+  }  
+  let Done_idDone;
+  if ('Done_idDone' in req.body && req.body.Done_idDone !== null && req.body.Done_idDone !== undefined && req.body.Done_idDone !== '') {
+    Done_idDone = req.body.Done_idDone;
+  } else {
+    Done_idDone = 2;
   }
-  const whatToDo = req.body.whatToDo;  
-  /*
-  const Done_idDone = 2;
-  const Category_idCategory = 6;
-  const Priority_idPriority = 4;*/
-  const Done_idDone = req.body.Done_idDone;
-  const Category_idCategory = req.body.Category_idCategory;
-  const Priority_idPriority = req.body.Priority_idPriority;
-  //const idTasks = req.body.idTasks;
-  //const insertTaskQuery = `INSERT INTO tasks (idTasks, whatToDo, Done_idDone, Category_idCategory, Priority_idPriority) VALUES (?, ?, ?, ?, ?)`;
+  let Category_idCategory;
+  if ('Category_idCategory' in req.body && req.body.Category_idCategory !== null && req.body.Category_idCategory !== undefined && req.body.Category_idCategory !== '') {
+    Category_idCategory = req.body.Category_idCategory;
+  } else {
+    Category_idCategory = 6;
+  }
+  let Priority_idPriority;
+  if ('Priority_idPriority' in req.body && req.body.Priority_idPriority !== null && req.body.Priority_idPriority !== undefined && req.body.Priority_idPriority !== '') {
+    Priority_idPriority = req.body.Priority_idPriority;
+  } else {
+    Priority_idPriority = 4;
+  } 
   const insertTaskQuery = `INSERT INTO tasks (idTasks, whatToDo, Done_idDone, Category_idCategory, Priority_idPriority) VALUES (?, ?, ?, ?, ?)`;
   db.query(
     insertTaskQuery,
@@ -106,6 +119,9 @@ const putTaskById = (req, res) => {
       if (err) {
         res.status(500).send(err);
       } else {
+        if (result.affectedRows === 0) {
+          res.status(404).json({ message: `Task with ID ${idTasks} not found` });
+        } else {
         res.status(200).json({
           idTasks,
           whatToDo,
@@ -115,7 +131,7 @@ const putTaskById = (req, res) => {
         });
       }
     }
-  );
+  });
 };
 
 // Delete task by ID (DELETE request)
@@ -127,11 +143,14 @@ const deleteTaskById = (req, res) => {
     if (err) {
       res.status(500).send(err);
     } else {
-      res.json({message: `Task with ID ${idTasks} has been deleted` })
+      if (result.affectedRows === 0) {
+        res.status(404).json({ message: `Task with ID ${idTasks} not found` });
+      } else {
+        res.json({ message: `Task with ID ${idTasks} has been deleted` });
+      }
     }
   });
 };
-
 
 
 
